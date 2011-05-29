@@ -32,3 +32,6 @@ _ReSharper*/
 *.[Pp]ublish.xml
 *.resharper
 *.docstates
+*.vsmdi
+*.testsettings
+*.trx
