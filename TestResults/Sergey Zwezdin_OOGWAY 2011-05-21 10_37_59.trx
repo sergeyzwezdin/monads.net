@@ -1,0 +1,189 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="20fdd70d-5919-4bd4-aff7-977ff07fe707" name="Sergey Zwezdin@OOGWAY 2011-05-21 10:37:59" runUser="OOGWAY\Sergey Zwezdin" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Local" id="c8503907-1843-48ad-a13a-1bbb05c0eec0">
+    <Description>These are default test settings for a local test run.</Description>
+    <Deployment enabled="false" runDeploymentRoot="Sergey Zwezdin_OOGWAY 2011-05-21 10_37_59">
+      <DeploymentItem filename="D:\OpenSource\Monads\Monads\bin\Debug\Monads.dll" />
+    </Deployment>
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2011-05-21T10:37:59.9378559+06:00" queuing="2011-05-21T10:38:00.3718808+06:00" start="2011-05-21T10:38:00.4238837+06:00" finish="2011-05-21T10:38:01.2409305+06:00" />
+  <ResultSummary outcome="Completed">
+    <Counters total="23" executed="23" passed="23" error="0" failed="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="TryDoOnObjectWithExceptionImplicitArrayFails" storage="d:\opensource\monads\monads.tests\bin\debug\monads.tests.dll" id="50f13d38-bd44-b1a7-e0e7-1bf983178be2">
+      <Execution id="d7d67272-2048-49d7-85fe-5f0ca37335fb" />
+      <TestMethod codeBase="D:/OpenSource/Monads/Monads.Tests/bin/Debug/Monads.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Monads.Tests.MaybeTests, Monads.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="TryDoOnObjectWithExceptionImplicitArrayFails" />
+    </UnitTest>
+    <UnitTest name="TryDoOnObjectWithExceptionImplicitLambda" storage="d:\opensource\monads\monads.tests\bin\debug\monads.tests.dll" id="e98ef332-dc09-754a-98c9-da9454646c8c">
+      <Execution id="80d376ec-a2e3-46cc-bf0e-060d27f03747" />
+      <TestMethod codeBase="D:/OpenSource/Monads/Monads.Tests/bin/Debug/Monads.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Monads.Tests.MaybeTests, Monads.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="TryDoOnObjectWithExceptionImplicitLambda" />
+    </UnitTest>
+    <UnitTest name="DoOnObjectWithValue" storage="d:\opensource\monads\monads.tests\bin\debug\monads.tests.dll" id="f1eb2811-d940-512e-9730-3f8be1677e44">
+      <Execution id="fffbb971-ba66-4d76-af10-94dcc4febb3b" />
+      <TestMethod codeBase="D:/OpenSource/Monads/Monads.Tests/bin/Debug/Monads.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Monads.Tests.MaybeTests, Monads.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="DoOnObjectWithValue" />
+    </UnitTest>
+    <UnitTest name="TryWithOnObjectWithExceptionImplicit" storage="d:\opensource\monads\monads.tests\bin\debug\monads.tests.dll" id="f608a959-73df-2b18-0e05-d88dc2e2d865">
+      <Execution id="b934a581-db6d-4f7b-9042-96a1fc821bce" />
+      <TestMethod codeBase="D:/OpenSource/Monads/Monads.Tests/bin/Debug/Monads.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Monads.Tests.MaybeTests, Monads.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="TryWithOnObjectWithExceptionImplicit" />
+    </UnitTest>
+    <UnitTest name="TryDoOnObjectWithValueNoException" storage="d:\opensource\monads\monads.tests\bin\debug\monads.tests.dll" id="536e4704-0b70-7f54-c643-68ceb1027b1d">
+      <Execution id="01e7d764-b239-4a99-9526-d112fa4c81fe" />
+      <TestMethod codeBase="D:/OpenSource/Monads/Monads.Tests/bin/Debug/Monads.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Monads.Tests.MaybeTests, Monads.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="TryDoOnObjectWithValueNoException" />
+    </UnitTest>
+    <UnitTest name="TryWithOnObjectWithException" storage="d:\opensource\monads\monads.tests\bin\debug\monads.tests.dll" id="6c2d098c-4a90-181f-fd67-ac956c9fa4a4">
+      <Execution id="f6d41511-489e-4516-bb0b-10f3b2ed2ba0" />
+      <TestMethod codeBase="D:/OpenSource/Monads/Monads.Tests/bin/Debug/Monads.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Monads.Tests.MaybeTests, Monads.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="TryWithOnObjectWithException" />
+    </UnitTest>
+    <UnitTest name="TryDoOnObjectWithException" storage="d:\opensource\monads\monads.tests\bin\debug\monads.tests.dll" id="d06801cb-b188-6546-93d6-ac04f4afe609">
+      <Execution id="d25c3f0d-9dcc-4a8c-9e4d-ff7478d9c8ad" />
+      <TestMethod codeBase="D:/OpenSource/Monads/Monads.Tests/bin/Debug/Monads.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Monads.Tests.MaybeTests, Monads.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="TryDoOnObjectWithException" />
+    </UnitTest>
+    <UnitTest name="TryWithOnObjectWithExceptionLambda" storage="d:\opensource\monads\monads.tests\bin\debug\monads.tests.dll" id="7dc6c501-bca2-5258-29b2-c26a12d46d47">
+      <Execution id="9f10a350-a9be-49db-929f-6632f2376bef" />
+      <TestMethod codeBase="D:/OpenSource/Monads/Monads.Tests/bin/Debug/Monads.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Monads.Tests.MaybeTests, Monads.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="TryWithOnObjectWithExceptionLambda" />
+    </UnitTest>
+    <UnitTest name="ReturnOnObjectWithNull" storage="d:\opensource\monads\monads.tests\bin\debug\monads.tests.dll" id="0a31d34c-1442-0d40-7fb2-1e136a64d8a2">
+      <Execution id="f55d431e-f844-4f1f-ac23-f3c77a52e185" />
+      <TestMethod codeBase="D:/OpenSource/Monads/Monads.Tests/bin/Debug/Monads.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Monads.Tests.MaybeTests, Monads.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="ReturnOnObjectWithNull" />
+    </UnitTest>
+    <UnitTest name="ReturnOnObjectWithValue" storage="d:\opensource\monads\monads.tests\bin\debug\monads.tests.dll" id="5a003b26-6f6b-c364-a42f-540bcd90efc3">
+      <Execution id="bb4cd27b-fb27-4678-8bb6-b45a866c7eff" />
+      <TestMethod codeBase="D:/OpenSource/Monads/Monads.Tests/bin/Debug/Monads.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Monads.Tests.MaybeTests, Monads.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="ReturnOnObjectWithValue" />
+    </UnitTest>
+    <UnitTest name="TryDoOnObjectWithNullNoException" storage="d:\opensource\monads\monads.tests\bin\debug\monads.tests.dll" id="5af9795c-c73d-fb39-bf6b-50c04c8ec890">
+      <Execution id="db69715f-46ec-45be-b45e-07e0fb3ff697" />
+      <TestMethod codeBase="D:/OpenSource/Monads/Monads.Tests/bin/Debug/Monads.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Monads.Tests.MaybeTests, Monads.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="TryDoOnObjectWithNullNoException" />
+    </UnitTest>
+    <UnitTest name="WithOnObjectWithValue" storage="d:\opensource\monads\monads.tests\bin\debug\monads.tests.dll" id="4762ab7f-b795-4132-280a-542bb519199d">
+      <Execution id="de4ef613-161b-4a3d-850c-8cedafdb6554" />
+      <TestMethod codeBase="D:/OpenSource/Monads/Monads.Tests/bin/Debug/Monads.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Monads.Tests.MaybeTests, Monads.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="WithOnObjectWithValue" />
+    </UnitTest>
+    <UnitTest name="OfTypeOnIntVsString" storage="d:\opensource\monads\monads.tests\bin\debug\monads.tests.dll" id="db3ba8e7-ed68-a08f-0397-c51ddfa9cada">
+      <Execution id="9fac54d0-7eae-4f57-bda0-75a2b1358e90" />
+      <TestMethod codeBase="D:/OpenSource/Monads/Monads.Tests/bin/Debug/Monads.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Monads.Tests.MaybeTests, Monads.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="OfTypeOnIntVsString" />
+    </UnitTest>
+    <UnitTest name="IfOnObjectWithNull" storage="d:\opensource\monads\monads.tests\bin\debug\monads.tests.dll" id="7e303737-1927-bfb4-8041-be806bafc89f">
+      <Execution id="e118041b-7695-446c-82fd-7642dd9892b8" />
+      <TestMethod codeBase="D:/OpenSource/Monads/Monads.Tests/bin/Debug/Monads.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Monads.Tests.MaybeTests, Monads.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="IfOnObjectWithNull" />
+    </UnitTest>
+    <UnitTest name="RecoverOnObjectWithValue" storage="d:\opensource\monads\monads.tests\bin\debug\monads.tests.dll" id="3dbecde9-dfb8-3136-8c6d-bd2aa54ed6e2">
+      <Execution id="fc967096-7569-42bc-9203-68101a59718d" />
+      <TestMethod codeBase="D:/OpenSource/Monads/Monads.Tests/bin/Debug/Monads.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Monads.Tests.MaybeTests, Monads.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="RecoverOnObjectWithValue" />
+    </UnitTest>
+    <UnitTest name="OfTypeOnString" storage="d:\opensource\monads\monads.tests\bin\debug\monads.tests.dll" id="3c6901df-f833-fd6b-fdc7-8bc052e43b45">
+      <Execution id="a7e9e25a-a62b-4b3a-b49b-b037778b8016" />
+      <TestMethod codeBase="D:/OpenSource/Monads/Monads.Tests/bin/Debug/Monads.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Monads.Tests.MaybeTests, Monads.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="OfTypeOnString" />
+    </UnitTest>
+    <UnitTest name="TryDoOnObjectWithExceptionImplicitArray" storage="d:\opensource\monads\monads.tests\bin\debug\monads.tests.dll" id="3346b668-a455-13f2-6fb6-2a72df25e08f">
+      <Execution id="e0d59066-2e47-49d9-aca3-125352d52313" />
+      <TestMethod codeBase="D:/OpenSource/Monads/Monads.Tests/bin/Debug/Monads.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Monads.Tests.MaybeTests, Monads.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="TryDoOnObjectWithExceptionImplicitArray" />
+    </UnitTest>
+    <UnitTest name="OfTypeOnInt" storage="d:\opensource\monads\monads.tests\bin\debug\monads.tests.dll" id="8cd896e1-d3ee-92f5-9d53-c3e2578d646f">
+      <Execution id="7ed9fbe4-15c3-4738-a997-e08c07a8f332" />
+      <TestMethod codeBase="D:/OpenSource/Monads/Monads.Tests/bin/Debug/Monads.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Monads.Tests.MaybeTests, Monads.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="OfTypeOnInt" />
+    </UnitTest>
+    <UnitTest name="WithOnObjectWithNull" storage="d:\opensource\monads\monads.tests\bin\debug\monads.tests.dll" id="78b112a1-d20e-169c-db71-1c04d9daa8bf">
+      <Execution id="42d6bd10-3532-446c-922c-2571c74b6283" />
+      <TestMethod codeBase="D:/OpenSource/Monads/Monads.Tests/bin/Debug/Monads.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Monads.Tests.MaybeTests, Monads.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="WithOnObjectWithNull" />
+    </UnitTest>
+    <UnitTest name="DoOnObjectWithNull" storage="d:\opensource\monads\monads.tests\bin\debug\monads.tests.dll" id="1c385e86-5f2f-3565-92a1-6dc2ff4cc9c3">
+      <Execution id="fba8a86c-d817-4ba3-a85b-77f35997f629" />
+      <TestMethod codeBase="D:/OpenSource/Monads/Monads.Tests/bin/Debug/Monads.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Monads.Tests.MaybeTests, Monads.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="DoOnObjectWithNull" />
+    </UnitTest>
+    <UnitTest name="IfNotOnObjectWithNull" storage="d:\opensource\monads\monads.tests\bin\debug\monads.tests.dll" id="a3b9314f-08f5-0b08-ded8-0f45fc658350">
+      <Execution id="fd792308-8486-4e66-8e29-ddf7c393302b" />
+      <TestMethod codeBase="D:/OpenSource/Monads/Monads.Tests/bin/Debug/Monads.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Monads.Tests.MaybeTests, Monads.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="IfNotOnObjectWithNull" />
+    </UnitTest>
+    <UnitTest name="IfOnObjectWithValue" storage="d:\opensource\monads\monads.tests\bin\debug\monads.tests.dll" id="e38d929c-a25e-10a6-50fa-2fc834800ee2">
+      <Execution id="fd670ec0-c7c1-432c-b9a6-1791c0cad919" />
+      <TestMethod codeBase="D:/OpenSource/Monads/Monads.Tests/bin/Debug/Monads.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Monads.Tests.MaybeTests, Monads.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="IfOnObjectWithValue" />
+    </UnitTest>
+    <UnitTest name="IfNotOnObjectWithValue" storage="d:\opensource\monads\monads.tests\bin\debug\monads.tests.dll" id="9e8ec41c-1209-aa80-888e-d51fa5c223ef">
+      <Execution id="969b71cc-8c51-4484-aee5-952c346e1803" />
+      <TestMethod codeBase="D:/OpenSource/Monads/Monads.Tests/bin/Debug/Monads.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Monads.Tests.MaybeTests, Monads.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="IfNotOnObjectWithValue" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="0a31d34c-1442-0d40-7fb2-1e136a64d8a2" executionId="f55d431e-f844-4f1f-ac23-f3c77a52e185" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="1c385e86-5f2f-3565-92a1-6dc2ff4cc9c3" executionId="fba8a86c-d817-4ba3-a85b-77f35997f629" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="3346b668-a455-13f2-6fb6-2a72df25e08f" executionId="e0d59066-2e47-49d9-aca3-125352d52313" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="3c6901df-f833-fd6b-fdc7-8bc052e43b45" executionId="a7e9e25a-a62b-4b3a-b49b-b037778b8016" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="3dbecde9-dfb8-3136-8c6d-bd2aa54ed6e2" executionId="fc967096-7569-42bc-9203-68101a59718d" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="4762ab7f-b795-4132-280a-542bb519199d" executionId="de4ef613-161b-4a3d-850c-8cedafdb6554" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="50f13d38-bd44-b1a7-e0e7-1bf983178be2" executionId="d7d67272-2048-49d7-85fe-5f0ca37335fb" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="536e4704-0b70-7f54-c643-68ceb1027b1d" executionId="01e7d764-b239-4a99-9526-d112fa4c81fe" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="5a003b26-6f6b-c364-a42f-540bcd90efc3" executionId="bb4cd27b-fb27-4678-8bb6-b45a866c7eff" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="5af9795c-c73d-fb39-bf6b-50c04c8ec890" executionId="db69715f-46ec-45be-b45e-07e0fb3ff697" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="6c2d098c-4a90-181f-fd67-ac956c9fa4a4" executionId="f6d41511-489e-4516-bb0b-10f3b2ed2ba0" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="78b112a1-d20e-169c-db71-1c04d9daa8bf" executionId="42d6bd10-3532-446c-922c-2571c74b6283" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="7dc6c501-bca2-5258-29b2-c26a12d46d47" executionId="9f10a350-a9be-49db-929f-6632f2376bef" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="7e303737-1927-bfb4-8041-be806bafc89f" executionId="e118041b-7695-446c-82fd-7642dd9892b8" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="8cd896e1-d3ee-92f5-9d53-c3e2578d646f" executionId="7ed9fbe4-15c3-4738-a997-e08c07a8f332" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="9e8ec41c-1209-aa80-888e-d51fa5c223ef" executionId="969b71cc-8c51-4484-aee5-952c346e1803" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="a3b9314f-08f5-0b08-ded8-0f45fc658350" executionId="fd792308-8486-4e66-8e29-ddf7c393302b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="d06801cb-b188-6546-93d6-ac04f4afe609" executionId="d25c3f0d-9dcc-4a8c-9e4d-ff7478d9c8ad" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="db3ba8e7-ed68-a08f-0397-c51ddfa9cada" executionId="9fac54d0-7eae-4f57-bda0-75a2b1358e90" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="e38d929c-a25e-10a6-50fa-2fc834800ee2" executionId="fd670ec0-c7c1-432c-b9a6-1791c0cad919" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="e98ef332-dc09-754a-98c9-da9454646c8c" executionId="80d376ec-a2e3-46cc-bf0e-060d27f03747" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="f1eb2811-d940-512e-9730-3f8be1677e44" executionId="fffbb971-ba66-4d76-af10-94dcc4febb3b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="f608a959-73df-2b18-0e05-d88dc2e2d865" executionId="b934a581-db6d-4f7b-9042-96a1fc821bce" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="f55d431e-f844-4f1f-ac23-f3c77a52e185" testId="0a31d34c-1442-0d40-7fb2-1e136a64d8a2" testName="ReturnOnObjectWithNull" computerName="OOGWAY" duration="00:00:00.0172452" startTime="2011-05-21T10:38:00.4398846+06:00" endTime="2011-05-21T10:38:00.7669033+06:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="f55d431e-f844-4f1f-ac23-f3c77a52e185">
+    </UnitTestResult>
+    <UnitTestResult executionId="fba8a86c-d817-4ba3-a85b-77f35997f629" testId="1c385e86-5f2f-3565-92a1-6dc2ff4cc9c3" testName="DoOnObjectWithNull" computerName="OOGWAY" duration="00:00:00.0072791" startTime="2011-05-21T10:38:00.7699035+06:00" endTime="2011-05-21T10:38:00.7959050+06:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="fba8a86c-d817-4ba3-a85b-77f35997f629">
+    </UnitTestResult>
+    <UnitTestResult executionId="e0d59066-2e47-49d9-aca3-125352d52313" testId="3346b668-a455-13f2-6fb6-2a72df25e08f" testName="TryDoOnObjectWithExceptionImplicitArray" computerName="OOGWAY" duration="00:00:00.0067106" startTime="2011-05-21T10:38:00.8129060+06:00" endTime="2011-05-21T10:38:00.8349072+06:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="e0d59066-2e47-49d9-aca3-125352d52313">
+    </UnitTestResult>
+    <UnitTestResult executionId="a7e9e25a-a62b-4b3a-b49b-b037778b8016" testId="3c6901df-f833-fd6b-fdc7-8bc052e43b45" testName="OfTypeOnString" computerName="OOGWAY" duration="00:00:00.0004174" startTime="2011-05-21T10:38:00.8709093+06:00" endTime="2011-05-21T10:38:00.8829100+06:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="a7e9e25a-a62b-4b3a-b49b-b037778b8016">
+    </UnitTestResult>
+    <UnitTestResult executionId="fc967096-7569-42bc-9203-68101a59718d" testId="3dbecde9-dfb8-3136-8c6d-bd2aa54ed6e2" testName="RecoverOnObjectWithValue" computerName="OOGWAY" duration="00:00:00.0015295" startTime="2011-05-21T10:38:00.8979108+06:00" endTime="2011-05-21T10:38:00.9069114+06:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="fc967096-7569-42bc-9203-68101a59718d">
+    </UnitTestResult>
+    <UnitTestResult executionId="de4ef613-161b-4a3d-850c-8cedafdb6554" testId="4762ab7f-b795-4132-280a-542bb519199d" testName="WithOnObjectWithValue" computerName="OOGWAY" duration="00:00:00.0031720" startTime="2011-05-21T10:38:00.9229123+06:00" endTime="2011-05-21T10:38:00.9429134+06:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="de4ef613-161b-4a3d-850c-8cedafdb6554">
+    </UnitTestResult>
+    <UnitTestResult executionId="d7d67272-2048-49d7-85fe-5f0ca37335fb" testId="50f13d38-bd44-b1a7-e0e7-1bf983178be2" testName="TryDoOnObjectWithExceptionImplicitArrayFails" computerName="OOGWAY" duration="00:00:00.0007155" startTime="2011-05-21T10:38:00.9569142+06:00" endTime="2011-05-21T10:38:00.9649147+06:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="d7d67272-2048-49d7-85fe-5f0ca37335fb">
+    </UnitTestResult>
+    <UnitTestResult executionId="01e7d764-b239-4a99-9526-d112fa4c81fe" testId="536e4704-0b70-7f54-c643-68ceb1027b1d" testName="TryDoOnObjectWithValueNoException" computerName="OOGWAY" duration="00:00:00.0013956" startTime="2011-05-21T10:38:00.9679148+06:00" endTime="2011-05-21T10:38:00.9729151+06:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="01e7d764-b239-4a99-9526-d112fa4c81fe">
+    </UnitTestResult>
+    <UnitTestResult executionId="bb4cd27b-fb27-4678-8bb6-b45a866c7eff" testId="5a003b26-6f6b-c364-a42f-540bcd90efc3" testName="ReturnOnObjectWithValue" computerName="OOGWAY" duration="00:00:00.0004499" startTime="2011-05-21T10:38:00.9759153+06:00" endTime="2011-05-21T10:38:00.9809156+06:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="bb4cd27b-fb27-4678-8bb6-b45a866c7eff">
+    </UnitTestResult>
+    <UnitTestResult executionId="db69715f-46ec-45be-b45e-07e0fb3ff697" testId="5af9795c-c73d-fb39-bf6b-50c04c8ec890" testName="TryDoOnObjectWithNullNoException" computerName="OOGWAY" duration="00:00:00.0005363" startTime="2011-05-21T10:38:00.9849158+06:00" endTime="2011-05-21T10:38:00.9889160+06:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="db69715f-46ec-45be-b45e-07e0fb3ff697">
+    </UnitTestResult>
+    <UnitTestResult executionId="f6d41511-489e-4516-bb0b-10f3b2ed2ba0" testId="6c2d098c-4a90-181f-fd67-ac956c9fa4a4" testName="TryWithOnObjectWithException" computerName="OOGWAY" duration="00:00:00.0020629" startTime="2011-05-21T10:38:00.9919162+06:00" endTime="2011-05-21T10:38:01.0009167+06:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="f6d41511-489e-4516-bb0b-10f3b2ed2ba0">
+    </UnitTestResult>
+    <UnitTestResult executionId="42d6bd10-3532-446c-922c-2571c74b6283" testId="78b112a1-d20e-169c-db71-1c04d9daa8bf" testName="WithOnObjectWithNull" computerName="OOGWAY" duration="00:00:00.0010085" startTime="2011-05-21T10:38:01.0049170+06:00" endTime="2011-05-21T10:38:01.0099172+06:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="42d6bd10-3532-446c-922c-2571c74b6283">
+    </UnitTestResult>
+    <UnitTestResult executionId="9f10a350-a9be-49db-929f-6632f2376bef" testId="7dc6c501-bca2-5258-29b2-c26a12d46d47" testName="TryWithOnObjectWithExceptionLambda" computerName="OOGWAY" duration="00:00:00.0026955" startTime="2011-05-21T10:38:01.0149175+06:00" endTime="2011-05-21T10:38:01.0229180+06:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="9f10a350-a9be-49db-929f-6632f2376bef">
+    </UnitTestResult>
+    <UnitTestResult executionId="e118041b-7695-446c-82fd-7642dd9892b8" testId="7e303737-1927-bfb4-8041-be806bafc89f" testName="IfOnObjectWithNull" computerName="OOGWAY" duration="00:00:00.0011103" startTime="2011-05-21T10:38:01.0289183+06:00" endTime="2011-05-21T10:38:01.0339186+06:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="e118041b-7695-446c-82fd-7642dd9892b8">
+    </UnitTestResult>
+    <UnitTestResult executionId="7ed9fbe4-15c3-4738-a997-e08c07a8f332" testId="8cd896e1-d3ee-92f5-9d53-c3e2578d646f" testName="OfTypeOnInt" computerName="OOGWAY" duration="00:00:00.0005098" startTime="2011-05-21T10:38:01.0389189+06:00" endTime="2011-05-21T10:38:01.0479194+06:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="7ed9fbe4-15c3-4738-a997-e08c07a8f332">
+    </UnitTestResult>
+    <UnitTestResult executionId="969b71cc-8c51-4484-aee5-952c346e1803" testId="9e8ec41c-1209-aa80-888e-d51fa5c223ef" testName="IfNotOnObjectWithValue" computerName="OOGWAY" duration="00:00:00.0013156" startTime="2011-05-21T10:38:01.0499195+06:00" endTime="2011-05-21T10:38:01.0689206+06:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="969b71cc-8c51-4484-aee5-952c346e1803">
+    </UnitTestResult>
+    <UnitTestResult executionId="fd792308-8486-4e66-8e29-ddf7c393302b" testId="a3b9314f-08f5-0b08-ded8-0f45fc658350" testName="IfNotOnObjectWithNull" computerName="OOGWAY" duration="00:00:00.0004640" startTime="2011-05-21T10:38:01.0739209+06:00" endTime="2011-05-21T10:38:01.0819214+06:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="fd792308-8486-4e66-8e29-ddf7c393302b">
+    </UnitTestResult>
+    <UnitTestResult executionId="d25c3f0d-9dcc-4a8c-9e4d-ff7478d9c8ad" testId="d06801cb-b188-6546-93d6-ac04f4afe609" testName="TryDoOnObjectWithException" computerName="OOGWAY" duration="00:00:00.0009799" startTime="2011-05-21T10:38:01.0869216+06:00" endTime="2011-05-21T10:38:01.0949221+06:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="d25c3f0d-9dcc-4a8c-9e4d-ff7478d9c8ad">
+    </UnitTestResult>
+    <UnitTestResult executionId="9fac54d0-7eae-4f57-bda0-75a2b1358e90" testId="db3ba8e7-ed68-a08f-0397-c51ddfa9cada" testName="OfTypeOnIntVsString" computerName="OOGWAY" duration="00:00:00.0011044" startTime="2011-05-21T10:38:01.0989223+06:00" endTime="2011-05-21T10:38:01.1169234+06:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="9fac54d0-7eae-4f57-bda0-75a2b1358e90">
+    </UnitTestResult>
+    <UnitTestResult executionId="fd670ec0-c7c1-432c-b9a6-1791c0cad919" testId="e38d929c-a25e-10a6-50fa-2fc834800ee2" testName="IfOnObjectWithValue" computerName="OOGWAY" duration="00:00:00.0060861" startTime="2011-05-21T10:38:01.1239238+06:00" endTime="2011-05-21T10:38:01.1449250+06:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="fd670ec0-c7c1-432c-b9a6-1791c0cad919">
+    </UnitTestResult>
+    <UnitTestResult executionId="80d376ec-a2e3-46cc-bf0e-060d27f03747" testId="e98ef332-dc09-754a-98c9-da9454646c8c" testName="TryDoOnObjectWithExceptionImplicitLambda" computerName="OOGWAY" duration="00:00:00.0162003" startTime="2011-05-21T10:38:01.1489252+06:00" endTime="2011-05-21T10:38:01.1819271+06:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="80d376ec-a2e3-46cc-bf0e-060d27f03747">
+    </UnitTestResult>
+    <UnitTestResult executionId="fffbb971-ba66-4d76-af10-94dcc4febb3b" testId="f1eb2811-d940-512e-9730-3f8be1677e44" testName="DoOnObjectWithValue" computerName="OOGWAY" duration="00:00:00.0006758" startTime="2011-05-21T10:38:01.1919277+06:00" endTime="2011-05-21T10:38:01.2009282+06:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="fffbb971-ba66-4d76-af10-94dcc4febb3b">
+    </UnitTestResult>
+    <UnitTestResult executionId="b934a581-db6d-4f7b-9042-96a1fc821bce" testId="f608a959-73df-2b18-0e05-d88dc2e2d865" testName="TryWithOnObjectWithExceptionImplicit" computerName="OOGWAY" duration="00:00:00.0027349" startTime="2011-05-21T10:38:01.2049284+06:00" endTime="2011-05-21T10:38:01.2179291+06:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="b934a581-db6d-4f7b-9042-96a1fc821bce">
+    </UnitTestResult>
+  </Results>
+</TestRun>
