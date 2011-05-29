@@ -1,5 +1,0 @@
-D:\OpenSource\Monads\Monads\bin\Debug\Monads.dll
-D:\OpenSource\Monads\Monads\bin\Debug\Monads.pdb
-D:\OpenSource\Monads\Monads\obj\Debug\ResolveAssemblyReference.cache
-D:\OpenSource\Monads\Monads\obj\Debug\Monads.dll
-D:\OpenSource\Monads\Monads\obj\Debug\Monads.pdb
