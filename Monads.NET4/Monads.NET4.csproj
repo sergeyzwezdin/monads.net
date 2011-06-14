@@ -8,8 +8,8 @@
     <ProjectGuid>{354A0AEC-7368-44AB-A9C6-20A67D8F52B5}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Monads.NET4</RootNamespace>
-    <AssemblyName>Monads.NET4</AssemblyName>
+    <RootNamespace>System.Monads</RootNamespace>
+    <AssemblyName>Monads</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -29,6 +29,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Release\Monads.xml</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
