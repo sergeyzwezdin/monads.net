@@ -46,6 +46,26 @@ namespace System.Monads
 		}
 
 		/// <summary>
+		/// Allows to do some <paramref name="action"/> on each element of <paramref name="source"/>
+		/// </summary>
+		/// <typeparam name="TSource">Type of collection elements</typeparam>
+		/// <param name="source">Source collection for operating</param>
+		/// <param name="action">Action which should to do (with zero-based index)</param>
+		/// <returns>Source collection</returns>
+		public static IEnumerable<TSource> Do<TSource>(this IEnumerable<TSource> source, Action<TSource, int> action)
+		{
+			if (source != null)
+			{
+				foreach (var element in source.Select((s, i) => new { Source = s, Index = i }))
+				{
+					action(element.Source, element.Index);
+				}
+			}
+
+			return source;
+		}
+
+		/// <summary>
 		/// Allows to do some conversion of <paramref name="source"/> collection elements if its not null
 		/// </summary>
 		/// <typeparam name="TSource">Type of collection elements</typeparam>

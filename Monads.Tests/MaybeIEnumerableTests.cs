@@ -34,6 +34,18 @@ namespace System.Monads.Tests
 			Assert.AreEqual(0, result.Count);
 		}
 
+
+		[TestMethod]
+		public void DoWithIndexes()
+		{
+			var source = new[] { new { Property = "First" }, new { Property = "Second" }, new { Property = "Third" } };
+
+			var result = new List<string>();
+			source.Do((s, index) => result.Add(index + " - " + s.Property));
+
+			CollectionAssert.AreEqual(new[] { "0 - First", "1 - Second", "2 - Third" }, result);
+		}
+
 		[TestMethod]
 		public void WithNotEmpty()
 		{
