@@ -71,9 +71,6 @@
     <Compile Include="..\Monads\Maybe.Objects.cs">
       <Link>Maybe.Objects.cs</Link>
     </Compile>
-    <Compile Include="..\Monads\Tuple.cs">
-      <Link>Tuple.cs</Link>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.CSharp.targets" />

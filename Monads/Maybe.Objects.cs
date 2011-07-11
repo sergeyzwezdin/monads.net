@@ -366,8 +366,20 @@ namespace System.Monads
 		/// </summary>
 		/// <typeparam name="TSource">Type of source object</typeparam>
 		/// <param name="source">Source object for checking</param>
+		/// <returns>true if <paramref name="source"/> is null, or false otherwise</returns>
+		public static bool IsNull<TSource>(this TSource source)
+			where TSource : class
+		{
+			return source == default(TSource);
+		}
+
+		/// <summary>
+		/// Allows to check whether <paramref name="source"/> is not null
+		/// </summary>
+		/// <typeparam name="TSource">Type of source object</typeparam>
+		/// <param name="source">Source object for checking</param>
 		/// <returns>true if <paramref name="source"/> is not null, or false otherwise</returns>
-		public static bool Any<TSource>(this TSource source)
+		public static bool IsNotNull<TSource>(this TSource source)
 			where TSource : class
 		{
 			return source != default(TSource);

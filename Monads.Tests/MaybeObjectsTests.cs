@@ -299,21 +299,41 @@ namespace System.Monads.Tests
 		}
 
 		[TestMethod]
-		public void AnyTrue()
+		public void IsNullTrue()
 		{
-			var source = "Some value";
+			string source = null;
 
-			var result = source.Any();
+			var result = source.IsNull();
 
 			Assert.AreEqual(true, result);
 		}
 
 		[TestMethod]
-		public void AnyFalse()
+		public void IsNullFalse()
+		{
+			var source = "Some value";
+
+			var result = source.IsNull();
+
+			Assert.AreEqual(false, result);
+		}
+
+		[TestMethod]
+		public void IsNotNullTrue()
+		{
+			var source = "Some value";
+
+			var result = source.IsNotNull();
+
+			Assert.AreEqual(true, result);
+		}
+
+		[TestMethod]
+		public void IsNotNullFalse()
 		{
 			string source = null;
 
-			var result = source.Any();
+			var result = source.IsNotNull();
 
 			Assert.AreEqual(false, result);
 		}
