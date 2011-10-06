@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Default" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+  <Import Project="common.targets" />
+
+  <Target Name="Default">
+    <CallTarget Targets="CleanupResultFolder" />
+    <CallTarget Targets="Build" />
+    <CallTarget Targets="PackNuGet" />
+  </Target>
+
+  <Target Name="CleanupResultFolder">
+    <MSBuild Projects="cleanup.msbuild" Targets="Cleanup" />
+  </Target>
+
+  <Target Name="Build">
+    <MSBuild Projects="build.msbuild" Targets="Build" />
+  </Target>
+
+  <Target Name="PackNuGet">
+    <MSBuild Projects="nuget.msbuild" Targets="Pack" />
+  </Target>
+
+</Project>

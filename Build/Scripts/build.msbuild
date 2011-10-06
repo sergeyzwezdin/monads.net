@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Default" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+  <Import Project="common.targets" />
+
+  <Target Name="Build">
+    <MSBuild Projects="$(SolutionPath)" Targets="Build"  BuildInParallel="true" UseResultsCache="false" Properties="Configuration=$(Configuration)"/>
+    <CallTarget Targets="RunTest" />
+    <CallTarget Targets="CopyToOutputPath_MonadsNET35" />
+    <CallTarget Targets="CopyToOutputPath_MonadsNET4" />
+    <CallTarget Targets="CopyToOutputPath_MonadsSilverlight3" />
+    <CallTarget Targets="CopyToOutputPath_MonadsSilverlight4" />
+    <CallTarget Targets="CopyToOutputPath_MonadsSilverlight5" />
+    <CallTarget Targets="CopyToOutputPath_MonadsWP7" />
+    <CallTarget Targets="CopyToOutputPath_MonadsXNA" />
+  </Target>
+
+  <Target Name="RunTest">
+    <ItemGroup>
+      <Tests Include="$(SourcesPath)\Monads.Tests\bin\$(Configuration)\*.Tests.dll"/>
+    </ItemGroup>
+
+    <Exec Command="MSTest.exe /testcontainer:@(Tests)"
+          IgnoreExitCode="false"/>
+
+    <RemoveDir Directories="TestResults"/>
+  </Target>
+
+
+  <Target Name="CopyToOutputPath_MonadsNET35">
+    <PropertyGroup>
+      <Proj>Monads.NET35</Proj>
+    </PropertyGroup>
+    <ItemGroup>
+      <Results Include="$(SourcesPath)\$(Proj)\bin\$(Configuration)\**\*.dll"/>
+      <Results Include="$(SourcesPath)\$(Proj)\bin\$(Configuration)\**\*.xml"/>
+    </ItemGroup>
+    <Copy SourceFiles="@(Results)" DestinationFolder="$(OutputPath)\$(Proj)"/>
+  </Target>
+
+  <Target Name="CopyToOutputPath_MonadsNET4">
+    <PropertyGroup>
+      <Proj>Monads.NET4</Proj>
+    </PropertyGroup>
+    <ItemGroup>
+      <Results Include="$(SourcesPath)\$(Proj)\bin\$(Configuration)\**\*.dll"/>
+      <Results Include="$(SourcesPath)\$(Proj)\bin\$(Configuration)\**\*.xml"/>
+    </ItemGroup>
+    <Copy SourceFiles="@(Results)" DestinationFolder="$(OutputPath)\$(Proj)"/>
+  </Target>
+
+  <Target Name="CopyToOutputPath_MonadsSilverlight3">
+    <PropertyGroup>
+      <Proj>Monads.Silverlight3</Proj>
+    </PropertyGroup>
+    <ItemGroup>
+      <Results Include="$(SourcesPath)\$(Proj)\bin\$(Configuration)\**\*.dll"/>
+      <Results Include="$(SourcesPath)\$(Proj)\bin\$(Configuration)\**\*.xml"/>
+    </ItemGroup>
+    <Copy SourceFiles="@(Results)" DestinationFolder="$(OutputPath)\$(Proj)"/>
+  </Target>
+
+  <Target Name="CopyToOutputPath_MonadsSilverlight4">
+    <PropertyGroup>
+      <Proj>Monads.Silverlight4</Proj>
+    </PropertyGroup>
+    <ItemGroup>
+      <Results Include="$(SourcesPath)\$(Proj)\bin\$(Configuration)\**\*.dll"/>
+      <Results Include="$(SourcesPath)\$(Proj)\bin\$(Configuration)\**\*.xml"/>
+    </ItemGroup>
+    <Copy SourceFiles="@(Results)" DestinationFolder="$(OutputPath)\$(Proj)"/>
+  </Target>
+
+  <Target Name="CopyToOutputPath_MonadsSilverlight5">
+    <PropertyGroup>
+      <Proj>Monads.Silverlight5</Proj>
+    </PropertyGroup>
+    <ItemGroup>
+      <Results Include="$(SourcesPath)\$(Proj)\bin\$(Configuration)\**\*.dll"/>
+      <Results Include="$(SourcesPath)\$(Proj)\bin\$(Configuration)\**\*.xml"/>
+    </ItemGroup>
+    <Copy SourceFiles="@(Results)" DestinationFolder="$(OutputPath)\$(Proj)"/>
+  </Target>
+
+  <Target Name="CopyToOutputPath_MonadsWP7">
+    <PropertyGroup>
+      <Proj>Monads.WP7</Proj>
+    </PropertyGroup>
+    <ItemGroup>
+      <Results Include="$(SourcesPath)\$(Proj)\bin\$(Configuration)\**\*.dll"/>
+      <Results Include="$(SourcesPath)\$(Proj)\bin\$(Configuration)\**\*.xml"/>
+    </ItemGroup>
+    <Copy SourceFiles="@(Results)" DestinationFolder="$(OutputPath)\$(Proj)"/>
+  </Target>
+
+  <Target Name="CopyToOutputPath_MonadsXNA">
+    <PropertyGroup>
+      <Proj>Monads.XNA</Proj>
+    </PropertyGroup>
+    <ItemGroup>
+      <Results Include="$(SourcesPath)\$(Proj)\bin\$(Configuration)\**\*.dll"/>
+      <Results Include="$(SourcesPath)\$(Proj)\bin\$(Configuration)\**\*.xml"/>
+    </ItemGroup>
+    <Copy SourceFiles="@(Results)" DestinationFolder="$(OutputPath)\$(Proj)"/>
+  </Target>
+
+</Project>

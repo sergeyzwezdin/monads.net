@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Default" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+  <Import Project="common.targets" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Release</Configuration>
+  </PropertyGroup>
+
+
+  <ItemGroup>
+    <Cleaining Include="$(SourcesPath)\**\obj\" />
+  </ItemGroup>
+  
+  <Target Name="Cleanup">
+    <RemoveDir Directories="$(OutputPath)" />
+    <MakeDir Directories="$(OutputPath)" />
+
+    <MSBuild Projects="$(SolutionPath)" Targets="Clean"/>
+  </Target>
+
+</Project>
