@@ -108,7 +108,7 @@ namespace System.Monads.Tests
 		}
 
 		[TestMethod]
-		public void RecoverOnObjectWithValue()
+		public void RecoverOnObjectWithNull()
 		{
 			string source = "Some value";
 			source = null;

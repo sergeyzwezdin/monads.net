@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ArgumentCheckTests.cs" />
+    <Compile Include="MaybeNullableTests.cs" />
     <Compile Include="EventsTests.cs" />
     <Compile Include="MaybeIDictionary.cs" />
     <Compile Include="MaybeIEnumerableTests.cs" />

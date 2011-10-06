@@ -105,6 +105,9 @@
     <Compile Include="..\Monads\Maybe.IEnumerable.cs">
       <Link>Maybe.IEnumerable.cs</Link>
     </Compile>
+    <Compile Include="..\Monads\Maybe.Nullable.cs">
+      <Link>Maybe.Nullable.cs</Link>
+    </Compile>
     <Compile Include="..\Monads\Maybe.Objects.cs">
       <Link>Maybe.Objects.cs</Link>
     </Compile>
