@@ -46,6 +46,12 @@
     <WarningLevel>4</WarningLevel>
     <DocumentationFile>Bin\Release\Monads.xml</DocumentationFile>
   </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>..\Monads\MonadsPublicSignKey.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="mscorlib" />
     <Reference Include="System.Windows" />
@@ -77,7 +83,15 @@
     <Compile Include="..\Monads\Tuple.cs">
       <Link>Tuple.cs</Link>
     </Compile>
+    <Compile Include="..\Monads\VersionInfo.cs">
+      <Link>VersionInfo.cs</Link>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\Monads\MonadsPublicSignKey.snk">
+      <Link>MonadsPublicSignKey.snk</Link>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.CSharp.targets" />
   <ProjectExtensions>
