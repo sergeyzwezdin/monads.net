@@ -3,8 +3,131 @@
 
   <Import Project="common.targets" />
 
+
+  <PropertyGroup>
+    <MSBuildExtensions>$(LibsPath)\MsBuildTasks\MSBuild.Community.Tasks.dll</MSBuildExtensions>
+    <NugetExecPath>$(LibsPath)\NuGet\NuGet.exe</NugetExecPath>
+  </PropertyGroup>
+
+  <UsingTask AssemblyFile="$(MSBuildExtensions)" TaskName="MSBuild.Community.Tasks.XmlUpdate" />
+
   <Target Name="Pack">
-    <Message Text="Packing solution..."/>
+    <CallTarget Targets="CleanNugetOutput"/>
+    
+    <CallTarget Targets="CopyToNutgetOutput_MonadsNET35" />
+    <CallTarget Targets="CopyToNutgetOutput_MonadsNET4" />
+    <CallTarget Targets="CopyToOutputPath_MonadsSilverlight3" />
+    <CallTarget Targets="CopyToOutputPath_MonadsSilverlight4" />
+    <CallTarget Targets="CopyToOutputPath_MonadsSilverlight5" />
+    <CallTarget Targets="CopyToOutputPath_MonadsWP7" />
+    <CallTarget Targets="CopyToOutputPath_MonadsWP71" />
+
+    <GetAssemblyIdentity AssemblyFiles="$(SourcesPath)\Monads\bin\$(Configuration)\monads.dll">
+      <Output TaskParameter="Assemblies" ItemName="AsmInfo" />
+    </GetAssemblyIdentity>
+
+    <Copy SourceFiles="$(NugetPath)\Monads.nuspec" DestinationFiles="$(NugetOutputPath)\Monads.nuspec"/>
+
+    <Message Text="path: $(MSBuildExtensions)"/>
+    <XmlUpdate Namespace="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd"
+               XmlFileName="$(NugetOutputPath)\Monads.nuspec"
+               XPath="/package/metadata/version"
+               Value="%(AsmInfo.Version)" />
+
+    <Exec WorkingDirectory="$(NugetOutputPath)"
+          Command="$(NugetExecPath) pack $(NugetOutputPath)\Monads.nuspec"/>
+
+    <Copy SourceFiles="$(NugetOutputPath)\Monads.%(AsmInfo.Version).nupkg" DestinationFiles="$(OutputPath)\NuGet\Monads.nupkg"/>
+    <Copy SourceFiles="$(NugetPath)\nuget-publish.cmd" DestinationFiles="$(OutputPath)\NuGet\nuget-publish.cmd"/>
+  </Target>
+
+  <Target Name="CleanNugetOutput">
+    <RemoveDir Directories="$(NugetOutputPath)" Condition="Exists($(OutputPath))" />
+    <MakeDir Directories="$(NugetOutputPath)" />
+  </Target>
+
+  <Target Name="CopyToNutgetOutput_MonadsNET35">
+    <PropertyGroup>
+      <Proj>Monads.NET35</Proj>
+      <NuGetName>net35</NuGetName>
+    </PropertyGroup>
+    <ItemGroup>
+      <Results Include="$(SourcesPath)\$(Proj)\bin\$(Configuration)\**\*.dll"/>
+      <Results Include="$(SourcesPath)\$(Proj)\bin\$(Configuration)\**\*.xml"/>
+    </ItemGroup>
+    <Copy SourceFiles="@(Results)" DestinationFolder="$(NugetOutputPath)\lib\$(NuGetName)"/>
+  </Target>
+
+  <Target Name="CopyToNutgetOutput_MonadsNET4">
+    <PropertyGroup>
+      <Proj>Monads.NET4</Proj>
+      <NuGetName>net40</NuGetName>
+    </PropertyGroup>
+    <ItemGroup>
+      <Results Include="$(SourcesPath)\$(Proj)\bin\$(Configuration)\**\*.dll"/>
+      <Results Include="$(SourcesPath)\$(Proj)\bin\$(Configuration)\**\*.xml"/>
+    </ItemGroup>
+    <Copy SourceFiles="@(Results)" DestinationFolder="$(NugetOutputPath)\lib\$(NuGetName)"/>
+  </Target>
+
+  <Target Name="CopyToOutputPath_MonadsSilverlight3">
+    <PropertyGroup>
+      <Proj>Monads.Silverlight3</Proj>
+      <NuGetName>sl3</NuGetName>
+    </PropertyGroup>
+    <ItemGroup>
+      <Results Include="$(SourcesPath)\$(Proj)\bin\$(Configuration)\**\*.dll"/>
+      <Results Include="$(SourcesPath)\$(Proj)\bin\$(Configuration)\**\*.xml"/>
+    </ItemGroup>
+    <Copy SourceFiles="@(Results)" DestinationFolder="$(NugetOutputPath)\lib\$(NuGetName)"/>
+  </Target>
+
+  <Target Name="CopyToOutputPath_MonadsSilverlight4">
+    <PropertyGroup>
+      <Proj>Monads.Silverlight4</Proj>
+      <NuGetName>sl4</NuGetName>
+    </PropertyGroup>
+    <ItemGroup>
+      <Results Include="$(SourcesPath)\$(Proj)\bin\$(Configuration)\**\*.dll"/>
+      <Results Include="$(SourcesPath)\$(Proj)\bin\$(Configuration)\**\*.xml"/>
+    </ItemGroup>
+    <Copy SourceFiles="@(Results)" DestinationFolder="$(NugetOutputPath)\lib\$(NuGetName)"/>
+  </Target>
+
+  <Target Name="CopyToOutputPath_MonadsSilverlight5">
+    <PropertyGroup>
+      <Proj>Monads.Silverlight5</Proj>
+      <NuGetName>sl5</NuGetName>
+    </PropertyGroup>
+    <ItemGroup>
+      <Results Include="$(SourcesPath)\$(Proj)\bin\$(Configuration)\**\*.dll"/>
+      <Results Include="$(SourcesPath)\$(Proj)\bin\$(Configuration)\**\*.xml"/>
+    </ItemGroup>
+    <Copy SourceFiles="@(Results)" DestinationFolder="$(NugetOutputPath)\lib\$(NuGetName)"/>
+  </Target>
+
+  <Target Name="CopyToOutputPath_MonadsWP7">
+    <PropertyGroup>
+      <Proj>Monads.WP7</Proj>
+      <NuGetName>sl3-wp</NuGetName>
+    </PropertyGroup>
+    <ItemGroup>
+      <Results Include="$(SourcesPath)\$(Proj)\bin\$(Configuration)\**\*.dll"/>
+      <Results Include="$(SourcesPath)\$(Proj)\bin\$(Configuration)\**\*.xml"/>
+    </ItemGroup>
+    <Copy SourceFiles="@(Results)" DestinationFolder="$(NugetOutputPath)\lib\$(NuGetName)"/>
+  </Target>
+
+  <Target Name="CopyToOutputPath_MonadsWP71">
+    <PropertyGroup>
+      <Proj>Monads.WP7</Proj>
+      <NuGetName>sl4-windowsphne71</NuGetName>
+    </PropertyGroup>
+    <ItemGroup>
+      <Results Include="$(SourcesPath)\$(Proj)\bin\$(Configuration)\**\*.dll"/>
+      <Results Include="$(SourcesPath)\$(Proj)\bin\$(Configuration)\**\*.xml"/>
+    </ItemGroup>
+    <Copy SourceFiles="@(Results)" DestinationFolder="$(NugetOutputPath)\lib\$(NuGetName)"/>
   </Target>
 
 </Project>

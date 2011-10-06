@@ -17,7 +17,7 @@
 
   <Target Name="RunTest">
     <ItemGroup>
-      <Tests Include="$(SourcesPath)\Monads.Tests\bin\$(Configuration)\*.Tests.dll"/>
+      <Tests Include="$(SourcesPath)\Monads.Tests\Bin\$(Configuration)\*.Tests.dll"/>
     </ItemGroup>
 
     <Exec Command="MSTest.exe /testcontainer:@(Tests)"
@@ -35,7 +35,7 @@
       <Results Include="$(SourcesPath)\$(Proj)\bin\$(Configuration)\**\*.dll"/>
       <Results Include="$(SourcesPath)\$(Proj)\bin\$(Configuration)\**\*.xml"/>
     </ItemGroup>
-    <Copy SourceFiles="@(Results)" DestinationFolder="$(OutputPath)\$(Proj)"/>
+    <Copy SourceFiles="@(Results)" DestinationFolder="$(OutputPath)\Binaries\$(Proj)"/>
   </Target>
 
   <Target Name="CopyToOutputPath_MonadsNET4">
@@ -46,7 +46,7 @@
       <Results Include="$(SourcesPath)\$(Proj)\bin\$(Configuration)\**\*.dll"/>
       <Results Include="$(SourcesPath)\$(Proj)\bin\$(Configuration)\**\*.xml"/>
     </ItemGroup>
-    <Copy SourceFiles="@(Results)" DestinationFolder="$(OutputPath)\$(Proj)"/>
+    <Copy SourceFiles="@(Results)" DestinationFolder="$(OutputPath)\Binaries\$(Proj)"/>
   </Target>
 
   <Target Name="CopyToOutputPath_MonadsSilverlight3">
@@ -57,7 +57,7 @@
       <Results Include="$(SourcesPath)\$(Proj)\bin\$(Configuration)\**\*.dll"/>
       <Results Include="$(SourcesPath)\$(Proj)\bin\$(Configuration)\**\*.xml"/>
     </ItemGroup>
-    <Copy SourceFiles="@(Results)" DestinationFolder="$(OutputPath)\$(Proj)"/>
+    <Copy SourceFiles="@(Results)" DestinationFolder="$(OutputPath)\Binaries\$(Proj)"/>
   </Target>
 
   <Target Name="CopyToOutputPath_MonadsSilverlight4">
@@ -68,7 +68,7 @@
       <Results Include="$(SourcesPath)\$(Proj)\bin\$(Configuration)\**\*.dll"/>
       <Results Include="$(SourcesPath)\$(Proj)\bin\$(Configuration)\**\*.xml"/>
     </ItemGroup>
-    <Copy SourceFiles="@(Results)" DestinationFolder="$(OutputPath)\$(Proj)"/>
+    <Copy SourceFiles="@(Results)" DestinationFolder="$(OutputPath)\Binaries\$(Proj)"/>
   </Target>
 
   <Target Name="CopyToOutputPath_MonadsSilverlight5">
@@ -79,7 +79,7 @@
       <Results Include="$(SourcesPath)\$(Proj)\bin\$(Configuration)\**\*.dll"/>
       <Results Include="$(SourcesPath)\$(Proj)\bin\$(Configuration)\**\*.xml"/>
     </ItemGroup>
-    <Copy SourceFiles="@(Results)" DestinationFolder="$(OutputPath)\$(Proj)"/>
+    <Copy SourceFiles="@(Results)" DestinationFolder="$(OutputPath)\Binaries\$(Proj)"/>
   </Target>
 
   <Target Name="CopyToOutputPath_MonadsWP7">
@@ -90,7 +90,7 @@
       <Results Include="$(SourcesPath)\$(Proj)\bin\$(Configuration)\**\*.dll"/>
       <Results Include="$(SourcesPath)\$(Proj)\bin\$(Configuration)\**\*.xml"/>
     </ItemGroup>
-    <Copy SourceFiles="@(Results)" DestinationFolder="$(OutputPath)\$(Proj)"/>
+    <Copy SourceFiles="@(Results)" DestinationFolder="$(OutputPath)\Binaries\$(Proj)"/>
   </Target>
 
   <Target Name="CopyToOutputPath_MonadsXNA">
@@ -101,7 +101,7 @@
       <Results Include="$(SourcesPath)\$(Proj)\bin\$(Configuration)\**\*.dll"/>
       <Results Include="$(SourcesPath)\$(Proj)\bin\$(Configuration)\**\*.xml"/>
     </ItemGroup>
-    <Copy SourceFiles="@(Results)" DestinationFolder="$(OutputPath)\$(Proj)"/>
+    <Copy SourceFiles="@(Results)" DestinationFolder="$(OutputPath)\Binaries\$(Proj)"/>
   </Target>
 
 </Project>

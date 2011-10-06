@@ -12,6 +12,10 @@
 
     <OutputPath>$(MSBuildStartupDirectory)\Result</OutputPath>
     <SourcesPath>$(MSBuildStartupDirectory)\..\Src</SourcesPath>
+    <LibsPath>$(MSBuildStartupDirectory)\..\Libs</LibsPath>
     <SolutionPath>$(SourcesPath)\$(SolutionName)</SolutionPath>
+    
+    <NugetPath>$(MSBuildStartupDirectory)\NuGet</NugetPath>
+    <NugetOutputPath>$(NugetPath)\Output</NugetOutputPath>
   </PropertyGroup>
 </Project>

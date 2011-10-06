@@ -7,6 +7,7 @@
     <CallTarget Targets="CleanupResultFolder" />
     <CallTarget Targets="Build" />
     <CallTarget Targets="PackNuGet" />
+    <CallTarget Targets="Pack" />
   </Target>
 
   <Target Name="CleanupResultFolder">
@@ -19,6 +20,10 @@
 
   <Target Name="PackNuGet">
     <MSBuild Projects="nuget.msbuild" Targets="Pack" />
+  </Target>
+
+  <Target Name="Pack">
+    <MSBuild Projects="archive.msbuild" Targets="Pack" />
   </Target>
 
 </Project>

@@ -12,8 +12,11 @@
   </ItemGroup>
   
   <Target Name="Cleanup">
-    <RemoveDir Directories="$(OutputPath)" />
+    <RemoveDir Directories="$(OutputPath)" Condition="Exists($(OutputPath))" />
     <MakeDir Directories="$(OutputPath)" />
+
+    <RemoveDir Directories="$(NugetOutputPath)" Condition="Exists($(NugetOutputPath))" />
+    <MakeDir Directories="$(NugetOutputPath)" />
 
     <MSBuild Projects="$(SolutionPath)" Targets="Clean"/>
   </Target>

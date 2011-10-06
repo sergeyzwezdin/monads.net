@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Default" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+  <Import Project="common.targets" />
+
+  <PropertyGroup>
+    <MSBuildExtensions>$(LibsPath)\MsBuildTasks\MSBuild.Community.Tasks.dll</MSBuildExtensions>
+  </PropertyGroup>
+
+  <UsingTask AssemblyFile="$(MSBuildExtensions)" TaskName="MSBuild.Community.Tasks.Zip" />
+
+  <Target Name="Pack">
+    <CallTarget Targets="PackBin"/>
+    <CallTarget Targets="CopySources"/>
+    <CallTarget Targets="PackSrc"/>
+  </Target>
+
+  <Target Name="PackBin">
+    <ItemGroup>
+      <FilesToZip Include="$(OutputPath)\Binaries\**\*.*"/>
+    </ItemGroup>
+
+    <GetAssemblyIdentity AssemblyFiles="$(SourcesPath)\Monads\bin\$(Configuration)\monads.dll">
+      <Output TaskParameter="Assemblies" ItemName="AsmInfo" />
+    </GetAssemblyIdentity>
+
+    <Zip ZipFileName="$(OutputPath)\Monads.Binaries.%(AsmInfo.Version).zip"
+         WorkingDirectory="$(OutputPath)\Binaries\"
+         Flatten="false"
+         ZipLevel="9"
+         Files="@(FilesToZip)"/>
+  </Target>
+
+  <Target Name="CopySources">
+    <ItemGroup>
+      <DefaultExclude Include="$(SourcesPath)\**\.svn\**" />
+      <DefaultExclude Include="$(SourcesPath)\**\bin\**" />
+      <DefaultExclude Include="$(SourcesPath)\**\obj\**" />
+      <DefaultExclude Include="$(SourcesPath)\**\Release\**" />
+      <DefaultExclude Include="$(SourcesPath)\**\Debug\**" />
+      <DefaultExclude Include="$(SourcesPath)\**\Test\**" />
+      <DefaultExclude Include="$(SourcesPath)\**\TestResults\**" />
+      <DefaultExclude Include="$(SourcesPath)\**\doc\**" />
+      <DefaultExclude Include="$(SourcesPath)\**\www\**" />
+      <DefaultExclude Include="$(SourcesPath)\**\*.user" />
+      <DefaultExclude Include="$(SourcesPath)\**\*.suo" />
+      <DefaultExclude Include="$(SourcesPath)\**\*.zip" />
+      <DefaultExclude Include="$(SourcesPath)\**\*.txt" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <SourceFiles Include="$(SourcesPath)\**\*.*" Exclude="@(DefaultExclude)" />
+    </ItemGroup>
+
+    <Copy SourceFiles="@(SourceFiles)" 
+          DestinationFiles="@(SourceFiles->'$(OutputPath)\Sources\%(RecursiveDir)%(Filename)%(Extension)')"/>
+  </Target>
+
+  <Target Name="PackSrc">
+    <ItemGroup>
+      <SourcesToZip Include="$(OutputPath)\Sources\**\*.*"/>
+    </ItemGroup>
+
+    <GetAssemblyIdentity AssemblyFiles="$(SourcesPath)\Monads\bin\$(Configuration)\monads.dll">
+      <Output TaskParameter="Assemblies" ItemName="AsmInfo" />
+    </GetAssemblyIdentity>
+
+    <Zip ZipFileName="$(OutputPath)\Monads.Sources.%(AsmInfo.Version).zip"
+         WorkingDirectory="$(OutputPath)\Sources\"
+         Flatten="false"
+         ZipLevel="9"
+         Files="@(SourcesToZip)"/>
+  </Target>
+
+</Project>
