@@ -52,10 +52,10 @@
       <NuGetName>net35</NuGetName>
     </PropertyGroup>
     <ItemGroup>
-      <Results Include="$(SourcesPath)\$(Proj)\bin\$(Configuration)\**\*.dll"/>
-      <Results Include="$(SourcesPath)\$(Proj)\bin\$(Configuration)\**\*.xml"/>
+      <ResultsNET35 Include="$(SourcesPath)\$(Proj)\bin\$(Configuration)\**\*.dll"/>
+      <ResultsNET35 Include="$(SourcesPath)\$(Proj)\bin\$(Configuration)\**\*.xml"/>
     </ItemGroup>
-    <Copy SourceFiles="@(Results)" DestinationFolder="$(NugetOutputPath)\lib\$(NuGetName)"/>
+    <Copy SourceFiles="@(ResultsNET35)" DestinationFolder="$(NugetOutputPath)\lib\$(NuGetName)"/>
   </Target>
 
   <Target Name="CopyToNutgetOutput_MonadsNET4">
@@ -64,10 +64,10 @@
       <NuGetName>net40</NuGetName>
     </PropertyGroup>
     <ItemGroup>
-      <Results Include="$(SourcesPath)\$(Proj)\bin\$(Configuration)\**\*.dll"/>
-      <Results Include="$(SourcesPath)\$(Proj)\bin\$(Configuration)\**\*.xml"/>
+      <ResultsNET4 Include="$(SourcesPath)\$(Proj)\bin\$(Configuration)\**\*.dll"/>
+      <ResultsNET4 Include="$(SourcesPath)\$(Proj)\bin\$(Configuration)\**\*.xml"/>
     </ItemGroup>
-    <Copy SourceFiles="@(Results)" DestinationFolder="$(NugetOutputPath)\lib\$(NuGetName)"/>
+    <Copy SourceFiles="@(ResultsNET4)" DestinationFolder="$(NugetOutputPath)\lib\$(NuGetName)"/>
   </Target>
 
   <Target Name="CopyToOutputPath_MonadsSilverlight3">
@@ -76,10 +76,10 @@
       <NuGetName>sl3</NuGetName>
     </PropertyGroup>
     <ItemGroup>
-      <Results Include="$(SourcesPath)\$(Proj)\bin\$(Configuration)\**\*.dll"/>
-      <Results Include="$(SourcesPath)\$(Proj)\bin\$(Configuration)\**\*.xml"/>
+      <ResultsSL3 Include="$(SourcesPath)\$(Proj)\bin\$(Configuration)\**\*.dll"/>
+      <ResultsSL3 Include="$(SourcesPath)\$(Proj)\bin\$(Configuration)\**\*.xml"/>
     </ItemGroup>
-    <Copy SourceFiles="@(Results)" DestinationFolder="$(NugetOutputPath)\lib\$(NuGetName)"/>
+    <Copy SourceFiles="@(ResultsSL3)" DestinationFolder="$(NugetOutputPath)\lib\$(NuGetName)"/>
   </Target>
 
   <Target Name="CopyToOutputPath_MonadsSilverlight4">
@@ -88,10 +88,10 @@
       <NuGetName>sl4</NuGetName>
     </PropertyGroup>
     <ItemGroup>
-      <Results Include="$(SourcesPath)\$(Proj)\bin\$(Configuration)\**\*.dll"/>
-      <Results Include="$(SourcesPath)\$(Proj)\bin\$(Configuration)\**\*.xml"/>
+      <ResultsSL4 Include="$(SourcesPath)\$(Proj)\bin\$(Configuration)\**\*.dll"/>
+      <ResultsSL4 Include="$(SourcesPath)\$(Proj)\bin\$(Configuration)\**\*.xml"/>
     </ItemGroup>
-    <Copy SourceFiles="@(Results)" DestinationFolder="$(NugetOutputPath)\lib\$(NuGetName)"/>
+    <Copy SourceFiles="@(ResultsSL4)" DestinationFolder="$(NugetOutputPath)\lib\$(NuGetName)"/>
   </Target>
 
   <Target Name="CopyToOutputPath_MonadsSilverlight5">
@@ -100,10 +100,10 @@
       <NuGetName>sl5</NuGetName>
     </PropertyGroup>
     <ItemGroup>
-      <Results Include="$(SourcesPath)\$(Proj)\bin\$(Configuration)\**\*.dll"/>
-      <Results Include="$(SourcesPath)\$(Proj)\bin\$(Configuration)\**\*.xml"/>
+      <ResultsSL5 Include="$(SourcesPath)\$(Proj)\bin\$(Configuration)\**\*.dll"/>
+      <ResultsSL5 Include="$(SourcesPath)\$(Proj)\bin\$(Configuration)\**\*.xml"/>
     </ItemGroup>
-    <Copy SourceFiles="@(Results)" DestinationFolder="$(NugetOutputPath)\lib\$(NuGetName)"/>
+    <Copy SourceFiles="@(ResultsSL5)" DestinationFolder="$(NugetOutputPath)\lib\$(NuGetName)"/>
   </Target>
 
   <Target Name="CopyToOutputPath_MonadsWP7">
@@ -112,10 +112,11 @@
       <NuGetName>sl3-wp</NuGetName>
     </PropertyGroup>
     <ItemGroup>
-      <Results Include="$(SourcesPath)\$(Proj)\bin\$(Configuration)\**\*.dll"/>
-      <Results Include="$(SourcesPath)\$(Proj)\bin\$(Configuration)\**\*.xml"/>
+      <ResultsWP7 Include="$(SourcesPath)\$(Proj)\bin\$(Configuration)\**\*.dll"/>
+      <ResultsWP7 Include="$(SourcesPath)\$(Proj)\bin\$(Configuration)\**\*.xml"/>
     </ItemGroup>
-    <Copy SourceFiles="@(Results)" DestinationFolder="$(NugetOutputPath)\lib\$(NuGetName)"/>
+    <Copy SourceFiles="@(ResultsWP7)" DestinationFolder="$(NugetOutputPath)\lib\$(NuGetName)"/>
+    <Copy SourceFiles="@(ResultsWP7)" DestinationFolder="$(NugetOutputPath)\lib\sl4-windowsphone"/>
   </Target>
 
   <Target Name="CopyToOutputPath_MonadsWP71">
@@ -124,10 +125,10 @@
       <NuGetName>sl4-windowsphne71</NuGetName>
     </PropertyGroup>
     <ItemGroup>
-      <Results Include="$(SourcesPath)\$(Proj)\bin\$(Configuration)\**\*.dll"/>
-      <Results Include="$(SourcesPath)\$(Proj)\bin\$(Configuration)\**\*.xml"/>
+      <ResultsWP71 Include="$(SourcesPath)\$(Proj)\bin\$(Configuration)\**\*.dll"/>
+      <ResultsWP71 Include="$(SourcesPath)\$(Proj)\bin\$(Configuration)\**\*.xml"/>
     </ItemGroup>
-    <Copy SourceFiles="@(Results)" DestinationFolder="$(NugetOutputPath)\lib\$(NuGetName)"/>
+    <Copy SourceFiles="@(ResultsWP71)" DestinationFolder="$(NugetOutputPath)\lib\$(NuGetName)"/>
   </Target>
 
 </Project>

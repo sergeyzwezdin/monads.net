@@ -42,11 +42,7 @@
     <DocumentationFile>Bin\Release\Monads.xml</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System.Windows" />
     <Reference Include="system" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Xml" />
-    <Reference Include="System.Net" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="..\Monads\ArgumentCheck.cs">

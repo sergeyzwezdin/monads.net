@@ -4,7 +4,7 @@
   <Import Project="common.targets" />
 
   <Target Name="Build">
-    <MSBuild Projects="$(SolutionPath)" Targets="Build"  BuildInParallel="true" UseResultsCache="false" Properties="Configuration=$(Configuration)"/>
+    <MSBuild Projects="$(SolutionPath)" Targets="Build"  BuildInParallel="false" UseResultsCache="false" Properties="Configuration=$(Configuration)"/>
     <CallTarget Targets="RunTest" />
     <CallTarget Targets="CopyToOutputPath_MonadsNET35" />
     <CallTarget Targets="CopyToOutputPath_MonadsNET4" />
@@ -33,10 +33,10 @@
       <Proj>Monads.NET35</Proj>
     </PropertyGroup>
     <ItemGroup>
-      <Results Include="$(SourcesPath)\$(Proj)\bin\$(Configuration)\**\*.dll"/>
-      <Results Include="$(SourcesPath)\$(Proj)\bin\$(Configuration)\**\*.xml"/>
+      <ResultsNET35 Include="$(SourcesPath)\$(Proj)\bin\$(Configuration)\**\*.dll"/>
+      <ResultsNET35 Include="$(SourcesPath)\$(Proj)\bin\$(Configuration)\**\*.xml"/>
     </ItemGroup>
-    <Copy SourceFiles="@(Results)" DestinationFolder="$(OutputPath)\Binaries\$(Proj)"/>
+    <Copy SourceFiles="@(ResultsNET35)" DestinationFolder="$(OutputPath)\Binaries\$(Proj)"/>
   </Target>
 
   <Target Name="CopyToOutputPath_MonadsNET4">
@@ -44,10 +44,10 @@
       <Proj>Monads.NET4</Proj>
     </PropertyGroup>
     <ItemGroup>
-      <Results Include="$(SourcesPath)\$(Proj)\bin\$(Configuration)\**\*.dll"/>
-      <Results Include="$(SourcesPath)\$(Proj)\bin\$(Configuration)\**\*.xml"/>
+      <ResultsNET4 Include="$(SourcesPath)\$(Proj)\bin\$(Configuration)\**\*.dll"/>
+      <ResultsNET4 Include="$(SourcesPath)\$(Proj)\bin\$(Configuration)\**\*.xml"/>
     </ItemGroup>
-    <Copy SourceFiles="@(Results)" DestinationFolder="$(OutputPath)\Binaries\$(Proj)"/>
+    <Copy SourceFiles="@(ResultsNET4)" DestinationFolder="$(OutputPath)\Binaries\$(Proj)"/>
   </Target>
 
   <Target Name="CopyToOutputPath_MonadsSilverlight3">
@@ -55,10 +55,10 @@
       <Proj>Monads.Silverlight3</Proj>
     </PropertyGroup>
     <ItemGroup>
-      <Results Include="$(SourcesPath)\$(Proj)\bin\$(Configuration)\**\*.dll"/>
-      <Results Include="$(SourcesPath)\$(Proj)\bin\$(Configuration)\**\*.xml"/>
+      <ResultsSL3 Include="$(SourcesPath)\$(Proj)\bin\$(Configuration)\**\*.dll"/>
+      <ResultsSL3 Include="$(SourcesPath)\$(Proj)\bin\$(Configuration)\**\*.xml"/>
     </ItemGroup>
-    <Copy SourceFiles="@(Results)" DestinationFolder="$(OutputPath)\Binaries\$(Proj)"/>
+    <Copy SourceFiles="@(ResultsSL3)" DestinationFolder="$(OutputPath)\Binaries\$(Proj)"/>
   </Target>
 
   <Target Name="CopyToOutputPath_MonadsSilverlight4">
@@ -66,10 +66,10 @@
       <Proj>Monads.Silverlight4</Proj>
     </PropertyGroup>
     <ItemGroup>
-      <Results Include="$(SourcesPath)\$(Proj)\bin\$(Configuration)\**\*.dll"/>
-      <Results Include="$(SourcesPath)\$(Proj)\bin\$(Configuration)\**\*.xml"/>
+      <ResultsSL4 Include="$(SourcesPath)\$(Proj)\bin\$(Configuration)\**\*.dll"/>
+      <ResultsSL4 Include="$(SourcesPath)\$(Proj)\bin\$(Configuration)\**\*.xml"/>
     </ItemGroup>
-    <Copy SourceFiles="@(Results)" DestinationFolder="$(OutputPath)\Binaries\$(Proj)"/>
+    <Copy SourceFiles="@(ResultsSL4)" DestinationFolder="$(OutputPath)\Binaries\$(Proj)"/>
   </Target>
 
   <Target Name="CopyToOutputPath_MonadsSilverlight5">
@@ -77,10 +77,10 @@
       <Proj>Monads.Silverlight5</Proj>
     </PropertyGroup>
     <ItemGroup>
-      <Results Include="$(SourcesPath)\$(Proj)\bin\$(Configuration)\**\*.dll"/>
-      <Results Include="$(SourcesPath)\$(Proj)\bin\$(Configuration)\**\*.xml"/>
+      <ResultsSL5 Include="$(SourcesPath)\$(Proj)\bin\$(Configuration)\**\*.dll"/>
+      <ResultsSL5 Include="$(SourcesPath)\$(Proj)\bin\$(Configuration)\**\*.xml"/>
     </ItemGroup>
-    <Copy SourceFiles="@(Results)" DestinationFolder="$(OutputPath)\Binaries\$(Proj)"/>
+    <Copy SourceFiles="@(ResultsSL5)" DestinationFolder="$(OutputPath)\Binaries\$(Proj)"/>
   </Target>
 
   <Target Name="CopyToOutputPath_MonadsWP7">
@@ -88,10 +88,10 @@
       <Proj>Monads.WP7</Proj>
     </PropertyGroup>
     <ItemGroup>
-      <Results Include="$(SourcesPath)\$(Proj)\bin\$(Configuration)\**\*.dll"/>
-      <Results Include="$(SourcesPath)\$(Proj)\bin\$(Configuration)\**\*.xml"/>
+      <ResultsWP7 Include="$(SourcesPath)\$(Proj)\bin\$(Configuration)\**\*.dll"/>
+      <ResultsWP7 Include="$(SourcesPath)\$(Proj)\bin\$(Configuration)\**\*.xml"/>
     </ItemGroup>
-    <Copy SourceFiles="@(Results)" DestinationFolder="$(OutputPath)\Binaries\$(Proj)"/>
+    <Copy SourceFiles="@(ResultsWP7)" DestinationFolder="$(OutputPath)\Binaries\$(Proj)"/>
   </Target>
 
   <Target Name="CopyToOutputPath_MonadsWP71">
@@ -99,10 +99,10 @@
       <Proj>Monads.WP71</Proj>
     </PropertyGroup>
     <ItemGroup>
-      <Results Include="$(SourcesPath)\$(Proj)\bin\$(Configuration)\**\*.dll"/>
-      <Results Include="$(SourcesPath)\$(Proj)\bin\$(Configuration)\**\*.xml"/>
+      <ResultsWP71 Include="$(SourcesPath)\$(Proj)\bin\$(Configuration)\**\*.dll"/>
+      <ResultsWP71 Include="$(SourcesPath)\$(Proj)\bin\$(Configuration)\**\*.xml"/>
     </ItemGroup>
-    <Copy SourceFiles="@(Results)" DestinationFolder="$(OutputPath)\Binaries\$(Proj)"/>
+    <Copy SourceFiles="@(ResultsWP71)" DestinationFolder="$(OutputPath)\Binaries\$(Proj)"/>
   </Target>
 
   <Target Name="CopyToOutputPath_MonadsXNA">
@@ -110,10 +110,10 @@
       <Proj>Monads.XNA</Proj>
     </PropertyGroup>
     <ItemGroup>
-      <Results Include="$(SourcesPath)\$(Proj)\bin\$(Configuration)\**\*.dll"/>
-      <Results Include="$(SourcesPath)\$(Proj)\bin\$(Configuration)\**\*.xml"/>
+      <ResultsXNA Include="$(SourcesPath)\$(Proj)\bin\$(Configuration)\**\*.dll"/>
+      <ResultsXNA Include="$(SourcesPath)\$(Proj)\bin\$(Configuration)\**\*.xml"/>
     </ItemGroup>
-    <Copy SourceFiles="@(Results)" DestinationFolder="$(OutputPath)\Binaries\$(Proj)"/>
+    <Copy SourceFiles="@(ResultsXNA)" DestinationFolder="$(OutputPath)\Binaries\$(Proj)"/>
   </Target>
 
 </Project>
