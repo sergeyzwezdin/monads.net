@@ -12,6 +12,7 @@
     <CallTarget Targets="CopyToOutputPath_MonadsSilverlight4" />
     <CallTarget Targets="CopyToOutputPath_MonadsSilverlight5" />
     <CallTarget Targets="CopyToOutputPath_MonadsWP7" />
+    <CallTarget Targets="CopyToOutputPath_MonadsWP71" />
     <CallTarget Targets="CopyToOutputPath_MonadsXNA" />
   </Target>
 
@@ -85,6 +86,17 @@
   <Target Name="CopyToOutputPath_MonadsWP7">
     <PropertyGroup>
       <Proj>Monads.WP7</Proj>
+    </PropertyGroup>
+    <ItemGroup>
+      <Results Include="$(SourcesPath)\$(Proj)\bin\$(Configuration)\**\*.dll"/>
+      <Results Include="$(SourcesPath)\$(Proj)\bin\$(Configuration)\**\*.xml"/>
+    </ItemGroup>
+    <Copy SourceFiles="@(Results)" DestinationFolder="$(OutputPath)\Binaries\$(Proj)"/>
+  </Target>
+
+  <Target Name="CopyToOutputPath_MonadsWP71">
+    <PropertyGroup>
+      <Proj>Monads.WP71</Proj>
     </PropertyGroup>
     <ItemGroup>
       <Results Include="$(SourcesPath)\$(Proj)\bin\$(Configuration)\**\*.dll"/>

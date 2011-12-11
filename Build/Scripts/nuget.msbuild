@@ -120,7 +120,7 @@
 
   <Target Name="CopyToOutputPath_MonadsWP71">
     <PropertyGroup>
-      <Proj>Monads.WP7</Proj>
+      <Proj>Monads.WP71</Proj>
       <NuGetName>sl4-windowsphne71</NuGetName>
     </PropertyGroup>
     <ItemGroup>
