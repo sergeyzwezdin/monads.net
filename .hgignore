@@ -23,6 +23,7 @@ syntax: glob
 *.scc
 [Bb]in
 [Dd]ebug*/
+[Bb]uild/[Rr]esult/
 obj/
 [Rr]elease*/
 _ReSharper*/
