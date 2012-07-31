@@ -54,6 +54,7 @@
     <Compile Include="..\Monads\VersionInfo.cs">
       <Link>VersionInfo.cs</Link>
     </Compile>
+    <Compile Include="ActionsTests.cs" />
     <Compile Include="ArgumentCheckTests.cs" />
     <Compile Include="MaybeNullableTests.cs" />
     <Compile Include="EventsTests.cs" />

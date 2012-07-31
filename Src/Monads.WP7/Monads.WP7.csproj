@@ -45,6 +45,9 @@
     <Reference Include="system" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\Monads\Actions.cs">
+      <Link>Actions.cs</Link>
+    </Compile>
     <Compile Include="..\Monads\ArgumentCheck.cs">
       <Link>ArgumentCheck.cs</Link>
     </Compile>
