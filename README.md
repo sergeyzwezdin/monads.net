@@ -111,3 +111,56 @@ After
 // do something
 
 Console.WriteLine(person.Recover(()=>new Person()).LastName);</pre>
+
+#### TryDo/Catch
+Before
+<pre>var person = ... ;
+// person.Work = null;
+try
+{
+  // NullReferenceException?
+  Console.WriteLine(person.Work.Address);
+}
+catch
+{
+}</pre>
+
+After
+<pre>var person = ... ;
+// person.Work = null;
+person.TryDo(p=>Console.WriteLine(p.Work.Address));</pre>
+
+--
+
+Before
+<pre>var person = ... ;
+// person.Work = null;
+try
+{
+  // NullReferenceException?
+  Console.WriteLine(person.Work.Address);
+}
+catch
+{
+  Console.WriteLine("Error");
+}</pre>
+
+After
+<pre>person.TryDo(p=>Console.WriteLine(p.Work.Address)).Catch(e=>Console.WriteLine("Error"));</pre>
+
+#### Checking exception type (via Type)
+Before
+<pre>var person = ... ;
+// person.Work = null;
+try
+{
+  // NullReferenceException?
+  Console.WriteLine(person.Work.Address);
+}
+catch (NullReferenceException)
+{
+  Console.WriteLine("Error");
+}</pre>
+
+After
+<pre>person.TryDo(p=>Console.WriteLine(p.Work.Address), typeof(NullReferenceException)).Catch(e=>Console.WriteLine("Error"));</pre>
