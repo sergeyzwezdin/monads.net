@@ -32,9 +32,10 @@ Just fork the project and pull request when you're ready.
 
 ## Contacts
 
-Feel free to communicate with by by twitter or e-mail:
+Feel free to communicate with me by twitter or e-mail:
 * e-mail: sergey _ _at_ _ zwezdin _ _dot_ _ com
 * twitter: [@sergun](http://twitter.com/sergun)
+* blog: [http://zwezdin.com](http://zwezdin.com)
 
 ## Scenarios
 
