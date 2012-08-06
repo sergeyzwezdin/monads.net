@@ -163,4 +163,64 @@ catch (NullReferenceException)
 }</pre>
 
 After
-<pre>person.TryDo(p=>Console.WriteLine(p.Work.Address), typeof(NullReferenceException)).Catch(e=>Console.WriteLine("Error"));</pre>
+<pre>person.TryDo(p=>Console.WriteLine(p.Work.Address), typeof(NullReferenceException))
+	.Catch(e=>Console.WriteLine("Error"));</pre>
+
+#### Checking exception type (via predicate)
+Before
+<pre>var person = ... ;
+// person.Work = null;
+try
+{
+  // NullReferenceException?
+  Console.WriteLine(person.Work.Address);
+}
+catch (NullReferenceException ex)
+{
+  if (ex.Message.Contains("some word") == false)
+  {
+    throw;
+  }
+  Console.WriteLine("Error");
+}</pre>
+
+After
+<pre>person.TryDo(p=>Console.WriteLine(p.Work.Address), e=>e.Message.Contains("some words"))
+	.Catch(e=>Console.WriteLine("Error"));</pre>
+
+#### Ignore exceptions
+Before
+<pre>var person = ... ;
+// person.Work = null;
+try
+{
+  // NullReferenceException?
+  Console.WriteLine(person.Work.Address);
+}
+catch
+{
+}</pre>
+
+After
+<pre>person.TryDo(p=>Console.WriteLine(p.Work.Address)).Catch();</pre>
+
+#### TryWith/Catch
+Before
+<pre>var person = ... ;
+// person.Work = null;
+try
+{
+  // NullReferenceException?
+  var address = person.Work.Address;
+  Console.WriteLine (address.TrimLeft());
+}
+catch
+{
+}</pre>
+
+After
+<pre>var person = ... ;
+// person.Work = null;
+person.TryWith(p=>p.Work.Address).Catch().Do(p=>Console.WriteLine(p));</pre>
+
+Exception matching and handling policies such as for TryDo.
