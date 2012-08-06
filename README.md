@@ -28,9 +28,9 @@ PM> Install-Package Monads
 ## Scenarios
 
 1. [Monads for objects](#monads-for-objects-)
-2. [Monads for collections](#samplecollections)
-3. [Argument checking](#sampleargs)
-4. [Events](#sampleevents)
+2. [Monads for collections](#monads-for-collections-)
+3. [Argument checking](#argument-checking-)
+4. [Events](#events)
 
 ### Monads for objects <a name="sampleobjects"/>
 
