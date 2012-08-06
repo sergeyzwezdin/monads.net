@@ -328,3 +328,174 @@ After
 <pre>IDictionary&lt;int, string&gt; data = ... ;
 // ...
 Console.WriteLine(data.Return(1, "Not found"));</pre>
+
+
+
+### Argument checking
+
+#### CheckNull
+
+Before
+<pre>public class Person
+{
+  private Work _workInfo;
+
+  public Person(Work workInfo)
+  {
+    if (workInfo == null)
+    {
+        throw new ArgumentNullException("workInfo");
+    }
+
+    _workInfo = workInfo;
+  }
+}</pre>
+
+After
+<pre>public class Person
+{
+  private Work _workInfo;
+
+  public Person(Work workInfo)
+  {
+     _workInfo = workInfo.CheckNull("workInfo");
+  }
+}</pre>
+
+
+--
+
+
+Before
+<pre>public class Person
+{
+  private Work _workInfo;
+
+  public Person(Work workInfo)
+  {
+    if (workInfo == null)
+    {
+        throw new CustomException("Incorrect data");
+    }
+    _workInfo = workInfo;
+  }
+}</pre>
+
+After
+<pre>public class Person
+{
+  private Work _workInfo;
+
+  public Person(Work workInfo)
+  {
+    _workInfo = workInfo.CheckNull(() => new CustomException("Incorrect data"));
+  }
+}</pre>
+
+
+#### CheckNullWithDefault
+
+Before
+<pre>public class Person
+{
+  private Work _workInfo;
+  public Person(Work workInfo)
+  {
+    if (workInfo != null)
+    {
+        _workInfo = workInfo;
+    }
+    else
+    {
+        _workInfo = new Work();
+    }
+  }
+}</pre>
+
+After
+<pre>public class Person
+{
+  private Work _workInfo;
+  public Person(Work workInfo)
+  {
+    _workInfo = workInfo.CheckNullWithDefault(new Work());
+  }
+}</pre>
+
+
+#### Check
+
+Before
+<pre>public class Person
+{
+  private Work _workInfo;
+
+  public Person(Work workInfo)
+  {
+    if (workInfo != null)
+    {
+      if (workInfo.Count > 5)
+      {
+        _workInfo = workInfo;
+      }
+      else
+      {
+        throw new IndexOutOfRangeException();
+      }
+    }
+    else
+    {
+        throw new ArgumentNullException("workInfo");
+    }
+  }
+}</pre>
+
+After
+<pre>public class Person
+{
+  private Work _workInfo;
+
+  public Person(Work workInfo)
+  {
+     _workInfo = workInfo.CheckNull("workInfo").Check(s=>s.Count>5, s=>new IndexOutOfRangeException());
+  }
+}</pre>
+
+
+#### CheckWithDefault
+
+Before
+<pre>public class Person
+{
+  private Work _workInfo;
+
+  public Person(Work workInfo)
+  {
+    if (workInfo != null)
+    {
+      if (workInfo.Count > 5)
+      {
+        _workInfo = workInfo;
+      }
+      else
+      {
+        _workInfo = new Work(10);
+      }
+    }
+    else
+    {
+        throw new ArgumentNullException("workInfo");
+    }
+  }
+}</pre>
+
+After
+<pre>public class Person
+{
+  private Work _workInfo;
+
+  public Person(Work workInfo)
+  {
+     _workInfo = workInfo.CheckNull("workInfo").CheckWithDefault(s => s.Count>5, new Work(10));
+  }
+}</pre>
