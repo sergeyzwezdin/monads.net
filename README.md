@@ -230,7 +230,8 @@ Exception matching and handling policies such as for TryDo.
 ### Monads for collections 
 
 #### Do
-** Enumerable **
+**Enumerable**
+
 Before
 <pre>IEnumerable&lt;string&gt; data = ...;
 // ...
@@ -247,7 +248,8 @@ After
 // ...
 data.Do(d=&gt;Console.WriteLine(d));</pre>
 
-** Dictionary **
+**Dictionary**
+
 Before
 <pre>IDictionary&lt;int, string&gt; data = ... ;
 // ...
@@ -265,7 +267,8 @@ After
 data.Do((k,v)=&gt;Console.WriteLine("{0} - {1}", k, v));</pre>
 
 #### With
-** Enumerable **
+**Enumerable**
+
 Before
 <pre>IEnumerable&lt;string&gt; data = ...;
 // ...
@@ -279,7 +282,8 @@ After
 // ...
 var result = data.With(d=&gt;d.Trim());</pre>
 
-** Dictionary **
+**Dictionary**
+
 Before
 <pre>IDictionary&lt;int, string&gt; data = ... ;
 // ...
@@ -302,7 +306,8 @@ if (result != null)
 }</pre>
 
 #### Return
-** Dictionary **
+**Dictionary**
+
 Before
 <pre>IDictionary&lt;int, string&gt; data = ... ;
 // ...
