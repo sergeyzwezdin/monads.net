@@ -5,7 +5,7 @@ Monads for .NET
 
 In functional programming, a monad is a programming structure that represents computations. Monads are a kind of abstract data type constructor that encapsulate program logic instead of data in the domain model. A defined monad allows the programmer to chain actions together to build a pipeline to process data in various steps, in which each action is decorated with additional processing rules provided by the monad. Programs written in functional style can make use of monads to structure procedures that include sequenced operations, or to define some arbitrary control flows (like handling concurrency, continuations, side effects such as input/output, or exceptions).
 
-More information about monads at [Wikipedia](http://en.wikipedia.org/wiki/Monad_(functional_programming) ).
+More information about monads at <a href="http://en.wikipedia.org/wiki/Monad_(functional_programming)">Wikipedia</a>.
 
 ***
 
