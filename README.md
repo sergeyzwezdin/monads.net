@@ -32,7 +32,7 @@ PM> Install-Package Monads
 3. [Argument checking](#sampleargs)
 4. [Events](#sampleevents)
 
-### Monads for objects <a id="sampleobjects"/>
+### Monads for objects <a name="sampleobjects"/>
 
 #### Do
 Before
@@ -227,7 +227,7 @@ Exception matching and handling policies such as for TryDo.
 
 
 
-### Monads for collections <a id="samplecollections"/>
+### Monads for collections <a name="samplecollections"/>
 
 #### Do
 **Enumerable**
@@ -331,7 +331,7 @@ Console.WriteLine(data.Return(1, "Not found"));</pre>
 
 
 
-### Argument checking <a id="sampleargs"/>
+### Argument checking <a name="sampleargs"/>
 
 #### CheckNull
 
@@ -504,7 +504,7 @@ After
 
 ### Events
 
-#### Events invoking <a id="sampleevents"/>
+#### Events invoking <a name="sampleevents"/>
 
 Before
 <pre>public class Person
