@@ -499,3 +499,63 @@ After
      _workInfo = workInfo.CheckNull("workInfo").CheckWithDefault(s => s.Count>5, new Work(10));
   }
 }</pre>
+
+
+
+### Events
+
+#### Events invoking
+
+Before
+<pre>public class Person
+{
+   public event EventHandler Updated;
+
+   public void Update()
+   {
+      if (Updated != null)
+      {
+           Updated(this, EventArgs.Empty);
+      }
+   }
+}</pre>
+
+After
+<pre>public class Person
+{
+   public event EventHandler Updated;
+
+   public void Update()
+   {
+       Updated.Execute(this, EventArgs.Empty);
+   }
+}</pre>
+
+
+--
+
+
+Before
+<pre>public class Person
+{
+   public event EventHandler<CustomEventArgs> Updated;
+
+   public void Update()
+   {
+      if (Updated != null)
+      {
+           Updated(this, new CustomEventArgs(...));
+      }
+   }
+}</pre>
+
+After
+<pre>public class Person
+{
+   public event EventHandler<CustomEventArgs> Updated;
+
+   public void Update()
+   {
+      Updated.Execute(this, new CustomEventArgs(...));
+   }
+}</pre>
