@@ -8,25 +8,25 @@ In functional programming, a monad is a programming structure that represents co
 ***
 
 ## Supported platforms
--------------------
+
 1. .NET 3.5-4
 2. Silverlight 3-5
 3. WP7
 4. XNA
 
 ## Installing
-----------
+
 1. Just reference **"Monads.dll"** file and add **"using System.Monads;"** to your code.
 2. Install via **nuget**.
 
 ## Nuget
------
+
 PM> Install-Package Monads
 
 [Nuget link](http://nuget.org/packages/Monads)
 
 ## Scenarios
-----------
+
 1. Monads for objects
 2. Monads for collections 
 3. Argument checking 
@@ -61,3 +61,53 @@ if (person != null)
 
 After
 <pre>string workPhoneCode = person.With(p=>p.Work).With(w=>w.Phone).With(p=>p.Code);</pre>
+
+#### Return
+Before
+<pre>string workPhoneCode = "default code";
+
+if (person != null)
+{
+  if (person.Work != null)
+  {
+    if (person.Work.Phone != null)
+    {
+       workPhoneCode = person.Work.Phone.Code;
+    }
+  }
+}</pre>
+
+After
+<pre>string workPhoneCode = person.With(p=>p.Work).With(w=>w.Phone).Return(p=>p.Code, "default code");</pre>
+
+#### If/IfNot
+Before
+<pre>if ((person.Age > 18) &&
+   (person.LastName != null) &&
+   (person.Work != null))
+{
+     Console.WriteLine(person);
+}</pre>
+
+After
+<pre>person.If(p=>p.Age > 18).IfNot(p=>p.LastName == null).IfNot(p=>p.Work == null).Do(p=>Console.WriteLine(person));</pre>
+
+#### Recover
+Before
+<pre>var person = new Person();
+
+// do something
+
+if (person == null)
+{
+  person = new Person();
+}
+
+Console.WriteLine(person.LastName);</pre>
+
+After
+<pre>var person = new Person();
+
+// do something
+
+Console.WriteLine(person.Recover(()=>new Person()).LastName);</pre>
