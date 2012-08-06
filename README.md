@@ -27,10 +27,10 @@ PM> Install-Package Monads
 
 ## Scenarios
 
-1. Monads for objects
-2. Monads for collections 
-3. Argument checking 
-4. Events 
+1. [Monads for objects]
+2. [Monads for collections]
+3. [Argument checking]
+4. [Events]
 
 ### Monads for objects
 
