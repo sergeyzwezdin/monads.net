@@ -7,25 +7,25 @@ In functional programming, a monad is a programming structure that represents co
 
 ***
 
-Supported platforms
+## Supported platforms
 -------------------
 1. .NET 3.5-4
 2. Silverlight 3-5
 3. WP7
 4. XNA
 
-Installing
+## Installing
 ----------
 1. Just reference **"Monads.dll"** file and add **"using System.Monads;"** to your code.
 2. Install via **nuget**.
 
-Nuget
+## Nuget
 -----
 PM> Install-Package Monads
 
 [Nuget link](http://nuget.org/packages/Monads)
 
-Scenarios
+## Scenarios
 ----------
 1. Monads for objects
 2. Monads for collections 
@@ -43,3 +43,21 @@ Before
 
 After
 <pre>data.Do(d=>Console.WriteLine(d));</pre>
+
+#### With
+Before
+<pre>string workPhoneCode;
+
+if (person != null)
+{
+  if (person.Work != null)
+  {
+    if (person.Work.Phone != null)
+    {
+       workPhoneCode = person.Work.Phone.Code;
+    }
+  }
+}</pre>
+
+After
+<pre>string workPhoneCode = person.With(p=>p.Work).With(w=>w.Phone).With(p=>p.Code);</pre>
