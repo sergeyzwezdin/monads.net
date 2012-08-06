@@ -224,3 +224,102 @@ After
 person.TryWith(p=>p.Work.Address).Catch().Do(p=>Console.WriteLine(p));</pre>
 
 Exception matching and handling policies such as for TryDo.
+
+
+
+### Monads for collections 
+
+#### Do
+** Enumerable **
+Before
+<pre>IEnumerable<string> data = ...;
+// ...
+if (data != null)
+{
+  foreach (var d in data)
+  {
+    Console.WriteLine(d);
+  }
+}</pre>
+
+After
+<pre>IEnumerable<string> data = ...;
+// ...
+data.Do(d=>Console.WriteLine(d));</pre>
+
+** Dictionary **
+Before
+<pre>IDictionary<int, string> data = ... ;
+// ...
+if (data != null)
+{
+  foreach (var d in data)
+  {
+     Console.WriteLine("{0} - {1}", d.Key, d.Value);
+  }
+}</pre>
+
+After
+<pre>IDictionary data = ... ;
+// ...
+data.Do((k,v)=>Console.WriteLine("{0} - {1}", k, v));</pre>
+
+#### With
+** Enumerable **
+Before
+<pre>IEnumerable<string> data = ...;
+// ...
+if (data != null)
+{
+  var result = data.Select(d=>d.Trim());
+}</pre>
+
+After
+<pre>IEnumerable<string> data = ...;
+// ...
+var result = data.With(d=>d.Trim());</pre>
+
+** Dictionary **
+Before
+<pre>IDictionary<int, string> data = ... ;
+// ...
+if (data != null)
+{
+  string result;
+  if (data.TryGetValue(1, out result) == true)
+  {
+    Console.WriteLine(result);
+  }
+}</pre>
+
+After
+<pre>IDictionary<int, string> data = ... ;
+// ...
+var result = data.With(1);
+if (result != null)
+{
+  Console.WriteLine(result);
+}</pre>
+
+#### Return
+** Dictionary **
+Before
+<pre>IDictionary<int, string> data = ... ;
+// ...
+if (data != null)
+{
+  string result;
+  if (data.TryGetValue(1, out result) == true)
+  {
+    Console.WriteLine(result);
+  }
+  else
+  {
+    Console.WriteLine("Not found");
+  }
+}</pre>
+
+After
+<pre>IDictionary<int, string> data = ... ;
+// ...
+Console.WriteLine(data.Return(1, "Not found"));</pre>
