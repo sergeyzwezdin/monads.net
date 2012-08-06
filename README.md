@@ -25,6 +25,17 @@ PM> Install-Package Monads
 
 [Nuget link](http://nuget.org/packages/Monads)
 
+## Contribution
+
+I'm glad to see your contributions for Monads.NET.
+Just fork the project and pull request when you're ready.
+
+## Contacts
+
+Feel free to communicate with by by twitter or e-mail:
+* e-mail: sergey _ _at_ _ zwezdin _ _dot_ _ com
+* twitter: [@sergun](http://twitter.com/sergun)
+
 ## Scenarios
 
 1. [Monads for objects](#monads-for-objects-)
