@@ -232,7 +232,7 @@ Exception matching and handling policies such as for TryDo.
 #### Do
 ** Enumerable **
 Before
-<pre>IEnumerable<string> data = ...;
+<pre>IEnumerable&lt;string&gt; data = ...;
 // ...
 if (data != null)
 {
@@ -243,13 +243,13 @@ if (data != null)
 }</pre>
 
 After
-<pre>IEnumerable<string> data = ...;
+<pre>IEnumerable&lt;string&gt; data = ...;
 // ...
-data.Do(d=>Console.WriteLine(d));</pre>
+data.Do(d=&gt;Console.WriteLine(d));</pre>
 
 ** Dictionary **
 Before
-<pre>IDictionary<int, string> data = ... ;
+<pre>IDictionary&lt;int, string&gt; data = ... ;
 // ...
 if (data != null)
 {
@@ -262,26 +262,26 @@ if (data != null)
 After
 <pre>IDictionary data = ... ;
 // ...
-data.Do((k,v)=>Console.WriteLine("{0} - {1}", k, v));</pre>
+data.Do((k,v)=&gt;Console.WriteLine("{0} - {1}", k, v));</pre>
 
 #### With
 ** Enumerable **
 Before
-<pre>IEnumerable<string> data = ...;
+<pre>IEnumerable&lt;string&gt; data = ...;
 // ...
 if (data != null)
 {
-  var result = data.Select(d=>d.Trim());
+  var result = data.Select(d=&gt;d.Trim());
 }</pre>
 
 After
-<pre>IEnumerable<string> data = ...;
+<pre>IEnumerable&lt;string&gt; data = ...;
 // ...
-var result = data.With(d=>d.Trim());</pre>
+var result = data.With(d=&gt;d.Trim());</pre>
 
 ** Dictionary **
 Before
-<pre>IDictionary<int, string> data = ... ;
+<pre>IDictionary&lt;int, string&gt; data = ... ;
 // ...
 if (data != null)
 {
@@ -293,7 +293,7 @@ if (data != null)
 }</pre>
 
 After
-<pre>IDictionary<int, string> data = ... ;
+<pre>IDictionary&lt;int, string&gt; data = ... ;
 // ...
 var result = data.With(1);
 if (result != null)
@@ -304,7 +304,7 @@ if (result != null)
 #### Return
 ** Dictionary **
 Before
-<pre>IDictionary<int, string> data = ... ;
+<pre>IDictionary&lt;int, string&gt; data = ... ;
 // ...
 if (data != null)
 {
@@ -320,6 +320,6 @@ if (data != null)
 }</pre>
 
 After
-<pre>IDictionary<int, string> data = ... ;
+<pre>IDictionary&lt;int, string&gt; data = ... ;
 // ...
 Console.WriteLine(data.Return(1, "Not found"));</pre>
