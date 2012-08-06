@@ -27,12 +27,12 @@ PM> Install-Package Monads
 
 ## Scenarios
 
-1. [Monads for objects]
-2. [Monads for collections]
-3. [Argument checking]
-4. [Events]
+1. [Monads for objects](#sampleobjects)
+2. [Monads for collections](#samplecollections)
+3. [Argument checking](#sampleargs)
+4. [Events](#sampleevents)
 
-### Monads for objects
+### Monads for objects <a id="sampleobjects"/>
 
 #### Do
 Before
@@ -227,7 +227,7 @@ Exception matching and handling policies such as for TryDo.
 
 
 
-### Monads for collections 
+### Monads for collections <a id="samplecollections"/>
 
 #### Do
 **Enumerable**
@@ -331,7 +331,7 @@ Console.WriteLine(data.Return(1, "Not found"));</pre>
 
 
 
-### Argument checking
+### Argument checking <a id="sampleargs"/>
 
 #### CheckNull
 
@@ -504,7 +504,7 @@ After
 
 ### Events
 
-#### Events invoking
+#### Events invoking <a id="sampleevents"/>
 
 Before
 <pre>public class Person
