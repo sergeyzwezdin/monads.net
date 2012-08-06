@@ -31,3 +31,15 @@ Scenarios
 2. Monads for collections 
 3. Argument checking 
 4. Events 
+
+### Monads for objects
+
+#### Do
+Before
+<pre>if (data != null)
+{
+  Console.WriteLine(data);
+}</pre>
+
+After
+<pre>data.Do(d=>Console.WriteLine(d));</pre>
