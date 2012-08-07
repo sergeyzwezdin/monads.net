@@ -58,13 +58,11 @@ if (person != null)
 After
 <pre>string workPhoneCode = person.With(p=>p.Work).With(w=>w.Phone).With(p=>p.Code);</pre>
 
+---
 
 More info at [wiki](https://github.com/sergun/monads.net/wiki):
 
 1. [Monads for objects](https://github.com/sergun/monads.net/wiki/Monads-for-objects)
-
 2. [Monads for collections](https://github.com/sergun/monads.net/wiki/Monads-for-collections)
-
 3. [Argument checking](https://github.com/sergun/monads.net/wiki/Argument-checking)
-
 4. [Events](https://github.com/sergun/monads.net/wiki/Events)
