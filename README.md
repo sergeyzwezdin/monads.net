@@ -39,6 +39,9 @@ Feel free to communicate with me by twitter or e-mail:
 * twitter: [@sergun](http://twitter.com/sergun)
 * blog: [http://zwezdin.com](http://zwezdin.com)
 
+## License
+Released under the [MIT license](http://www.opensource.org/licenses/MIT).
+
 ## Benefits (code samples)
 
 Before
