@@ -49,6 +49,7 @@
   <ItemGroup>
     <Compile Include="Actions.cs" />
     <Compile Include="ArgumentCheck.cs" />
+    <Compile Include="Maybe.ItemArray.cs" />
     <Compile Include="Maybe.Nullable.cs" />
     <Compile Include="Events.cs" />
     <Compile Include="Maybe.IDictionary.cs" />
