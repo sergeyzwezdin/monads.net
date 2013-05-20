@@ -4,3 +4,6 @@ obj
 
 # mstest test results
 TestResults
+
+# VS files
+*.suo
