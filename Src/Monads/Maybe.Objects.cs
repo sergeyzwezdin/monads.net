@@ -1,6 +1,7 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 
-namespace System.Monads
+namespace Monads
 {
 	public static class MaybeObjects
 	{

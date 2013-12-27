@@ -1,4 +1,6 @@
-﻿namespace System.Monads
+﻿using System;
+
+namespace Monads
 {
 	public class Tuple<T1, T2>
 	{

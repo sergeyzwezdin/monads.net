@@ -8,7 +8,7 @@
     <ProjectGuid>{725A6081-2763-44A7-B90C-A107B35D1468}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>System.Monads</RootNamespace>
+    <RootNamespace>Monads</RootNamespace>
     <AssemblyName>Monads</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>

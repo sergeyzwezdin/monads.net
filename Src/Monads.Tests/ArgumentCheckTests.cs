@@ -1,6 +1,7 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using System;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace System.Monads.Tests
+namespace Monads.Tests
 {
 	[TestClass]
 	public class ArgumentCheckTests
