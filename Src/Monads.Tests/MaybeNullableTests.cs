@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace System.Monads.Tests
 {
@@ -11,10 +10,10 @@ namespace System.Monads.Tests
 		{
 			int? source = 5;
 
-			var result = String.Empty;
-			source.Do(s => result = s.ToString());
+			var result = 0;
+			source.Do(s => result = s.Value);
 
-			Assert.AreEqual("5", result);
+			Assert.AreEqual(5, result);
 		}
 
 		[TestMethod]
@@ -22,10 +21,10 @@ namespace System.Monads.Tests
 		{
 			int? source = null;
 
-			var result = String.Empty;
-			source.Do(s => result = s.ToString());
+			var result = 10;
+			source.Do(s => result = s.Value);
 
-			Assert.AreEqual(String.Empty, result);
+			Assert.AreEqual(10, result);
 		}
 
 		[TestMethod]
@@ -33,9 +32,9 @@ namespace System.Monads.Tests
 		{
 			int? source = 5;
 
-			var result = source.With(s => s.ToString());
+			int result = source.With(s => s.Value);
 
-			Assert.AreEqual("5", result);
+			Assert.AreEqual(5, result);
 		}
 
 		[TestMethod]
@@ -43,9 +42,9 @@ namespace System.Monads.Tests
 		{
 			int? source = null;
 
-			var result = source.With(s => s.ToString());
+			int result = source.With(s => s.Value);
 
-			Assert.AreEqual(default(string), result);
+			Assert.AreEqual(default(int), result);
 		}
 
 		[TestMethod]
@@ -53,9 +52,9 @@ namespace System.Monads.Tests
 		{
 			int? source = 5;
 
-			var result = source.Return(s => s.ToString(), "Nothing");
+			int result = source.Return(s => s.Value, 10);
 
-			Assert.AreEqual("5", result);
+			Assert.AreEqual(5, result);
 		}
 
 		[TestMethod]
@@ -63,9 +62,9 @@ namespace System.Monads.Tests
 		{
 			int? source = null;
 
-			var result = source.Return(s => s.ToString(), "Nothing");
+			int result = source.Return(s => s.Value, 10);
 
-			Assert.AreEqual("Nothing", result);
+			Assert.AreEqual(10, result);
 		}
 
 		[TestMethod]
@@ -109,7 +108,7 @@ namespace System.Monads.Tests
 		{
 			int? source = null;
 
-			var result = source.Recover(() => 10);
+			int result = source.Recover(() => 10);
 
 			Assert.AreEqual(10, result);
 		}
@@ -119,10 +118,10 @@ namespace System.Monads.Tests
 		{
 			int? source = 5;
 
-			var r = String.Empty;
-			var result = source.TryDo(s => r = s.ToString());
+			var r = 0;
+			var result = source.TryDo(s => r = s.Value);
 
-			Assert.AreEqual("5", r);
+			Assert.AreEqual(5, r);
 			Assert.AreEqual(source, result.Item1);
 			Assert.AreEqual(null, result.Item2);
 		}
@@ -132,10 +131,10 @@ namespace System.Monads.Tests
 		{
 			int? source = null;
 
-			var r = String.Empty;
-			var result = source.TryDo(s => r = s.ToString());
+			var r = 10;
+			var result = source.TryDo(s => r = s.Value);
 
-			Assert.AreEqual(String.Empty, r);
+			Assert.AreEqual(10, r);
 			Assert.AreEqual(null, result.Item1);
 			Assert.AreEqual(null, result.Item2);
 		}
@@ -189,6 +188,28 @@ namespace System.Monads.Tests
 			catch (DivideByZeroException)
 			{
 			}
+		}
+
+		[TestMethod]
+		public void TryWithOnObjectWithValueNoException()
+		{
+			int? source = 5;
+
+			Tuple<int,Exception> result = source.TryWith(s => s.Value);
+
+			Assert.AreEqual(5, result.Item1);
+			Assert.AreEqual(null, result.Item2);
+		}
+
+		[TestMethod]
+		public void TryWithOnObjectWithNullNoException()
+		{
+			int? source = null;
+
+			Tuple<int, Exception> result = source.TryWith(s => s.Value);
+
+			Assert.AreEqual(default(int), result.Item1);
+			Assert.AreEqual(null, result.Item2);
 		}
 
 
