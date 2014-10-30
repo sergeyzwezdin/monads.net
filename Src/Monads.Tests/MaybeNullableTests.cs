@@ -6,6 +6,18 @@ namespace System.Monads.Tests
 	public class MaybeNullableTests
 	{
 		[TestMethod]
+		public void WithOnDateTime()
+		{
+			DateTime? source = new DateTime(2014, 9, 1);
+
+			//please note that explicit type specification is not needed
+			int result = source.With(s => s.Day);
+
+			Assert.AreEqual(1, result);
+		}
+
+	
+		[TestMethod]
 		public void DoOnObjectWithValue()
 		{
 			int? source = 5;
