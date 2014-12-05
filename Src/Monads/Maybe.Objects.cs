@@ -21,6 +21,44 @@ namespace System.Monads
 
 			return source;
 		}
+		
+		/// <summary>
+		/// Allows to do some <paramref name="action"/> on <paramref name="source"/> when it's not null and another action when null (for example, writing logs) 
+		/// </summary>
+		/// <typeparam name="TSource">Type of source object</typeparam>
+		/// <param name="source">Source object for operating</param>
+		/// <param name="action">Action when not null</param>
+		/// <param name="nullaction">Action when null</param>
+		/// <returns><paramref name="source"/> object</returns>
+		public static TSource Do<TSource>(this TSource source, Action<TSource> action, Action<TSource> nullaction = null) where TSource : class
+	        {
+	            if (source != default(TSource))
+	                action(source);
+	            else if (nullaction != null)
+	                nullaction(source);
+	
+	            return source;
+	        }
+	        
+	        /// <summary>
+		/// Allows to do some select on <paramref name="source"/> when it's not null and another action when null (for example, writing logs) 
+		/// </summary>
+		/// <typeparam name="TSource">Type of source object</typeparam>
+		/// <param name="source">Source object for operating</param>
+		/// <param name="action">Select function when not null</param>
+		/// <param name="nullaction">Action when null</param>
+		/// <returns><paramref name="source"/> object</returns>
+	        public static TResult DoSelect<TSource, TResult>(this TSource source, Func<TSource, TResult> action, Action<TSource> nullaction = null)
+	            where TSource : class
+	            where TResult : class
+	        {
+	            if (source != default(TSource))
+	                return action(source);
+	            else if (nullaction != null)
+	                nullaction(source);
+	
+	            return default(TResult);
+	        }
 
 		/// <summary>
 		/// Allows to do some conversion of <paramref name="source"/> if its not null
