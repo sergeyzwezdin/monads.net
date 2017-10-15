@@ -1,7 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace System.Monads.Tests
+namespace Monads.Tests
 {
 	[TestClass]
 	public class MaybeNullableTests

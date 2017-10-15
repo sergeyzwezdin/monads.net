@@ -9,7 +9,7 @@
     <ProjectGuid>{EE1105E5-CE79-4C0D-AF44-3C2B184A3F91}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>System.Monads.Tests</RootNamespace>
+    <RootNamespace>Monads.Tests</RootNamespace>
     <AssemblyName>Monads.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
