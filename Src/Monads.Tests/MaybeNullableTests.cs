@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace System.Monads.Tests
 {
@@ -7,14 +6,26 @@ namespace System.Monads.Tests
 	public class MaybeNullableTests
 	{
 		[TestMethod]
+		public void WithOnDateTime()
+		{
+			DateTime? source = new DateTime(2014, 9, 1);
+
+			//please note that explicit type specification is not needed
+			int result = source.With(s => s.Day);
+
+			Assert.AreEqual(1, result);
+		}
+
+	
+		[TestMethod]
 		public void DoOnObjectWithValue()
 		{
 			int? source = 5;
 
-			var result = String.Empty;
-			source.Do(s => result = s.ToString());
+			var result = 0;
+			source.Do(s => result = s);
 
-			Assert.AreEqual("5", result);
+			Assert.AreEqual(5, result);
 		}
 
 		[TestMethod]
@@ -22,10 +33,10 @@ namespace System.Monads.Tests
 		{
 			int? source = null;
 
-			var result = String.Empty;
-			source.Do(s => result = s.ToString());
+			var result = 10;
+			source.Do(s => result = s);
 
-			Assert.AreEqual(String.Empty, result);
+			Assert.AreEqual(10, result);
 		}
 
 		[TestMethod]
@@ -33,9 +44,13 @@ namespace System.Monads.Tests
 		{
 			int? source = 5;
 
-			var result = source.With(s => s.ToString());
+			//int result = source.With(s => s);
+			//error CS0121: The call is ambiguous between the following methods or properties:
+			//'System.Monads.MaybeNullable.With<int,int>(int?, System.Func<int,int>)' and 'System.Monads.MaybeObjects.With<int?,int?>(int?, System.Func<int?,int?>)'
 
-			Assert.AreEqual("5", result);
+			int result = source.With((int s) => s);
+
+			Assert.AreEqual(5, result);
 		}
 
 		[TestMethod]
@@ -43,9 +58,9 @@ namespace System.Monads.Tests
 		{
 			int? source = null;
 
-			var result = source.With(s => s.ToString());
+			int result = source.With((int s) => s);
 
-			Assert.AreEqual(default(string), result);
+			Assert.AreEqual(default(int), result);
 		}
 
 		[TestMethod]
@@ -53,9 +68,9 @@ namespace System.Monads.Tests
 		{
 			int? source = 5;
 
-			var result = source.Return(s => s.ToString(), "Nothing");
+			int result = source.Return(s => s, 10);
 
-			Assert.AreEqual("5", result);
+			Assert.AreEqual(5, result);
 		}
 
 		[TestMethod]
@@ -63,9 +78,9 @@ namespace System.Monads.Tests
 		{
 			int? source = null;
 
-			var result = source.Return(s => s.ToString(), "Nothing");
+			int result = source.Return(s => s, 10);
 
-			Assert.AreEqual("Nothing", result);
+			Assert.AreEqual(10, result);
 		}
 
 		[TestMethod]
@@ -73,8 +88,8 @@ namespace System.Monads.Tests
 		{
 			int? source = 5;
 
-			Assert.AreEqual(source, source.If(s => s.Value > 3));
-			Assert.AreEqual(default(int), source.If(s => s.Value > 6));
+			Assert.AreEqual(5, source.If((int s) => s > 3));
+			Assert.AreEqual(default(int), source.If((int s) => s > 6));
 		}
 
 		[TestMethod]
@@ -82,8 +97,8 @@ namespace System.Monads.Tests
 		{
 			int? source = null;
 
-			Assert.AreEqual(default(int), source.If(s => s.Value > 3));
-			Assert.AreEqual(default(int), source.If(s => s.Value > 6));
+			Assert.AreEqual(default(int), source.If((int s) => s > 3));
+			Assert.AreEqual(default(int), source.If((int s) => s > 6));
 		}
 
 		[TestMethod]
@@ -91,8 +106,8 @@ namespace System.Monads.Tests
 		{
 			int? source = 5;
 
-			Assert.AreEqual(default(int), source.IfNot(s => s.Value > 3));
-			Assert.AreEqual(source, source.IfNot(s => s.Value > 6));
+			Assert.AreEqual(default(int), source.IfNot((int s) => s > 3));
+			Assert.AreEqual(source, source.IfNot((int s) => s > 6));
 		}
 
 		[TestMethod]
@@ -100,8 +115,8 @@ namespace System.Monads.Tests
 		{
 			int? source = null;
 
-			Assert.AreEqual(default(int), source.IfNot(s => s.Value > 3));
-			Assert.AreEqual(default(int), source.IfNot(s => s.Value > 6));
+			Assert.AreEqual(default(int), source.IfNot((int s) => s > 3));
+			Assert.AreEqual(default(int), source.IfNot((int s) => s > 6));
 		}
 
 		[TestMethod]
@@ -109,7 +124,7 @@ namespace System.Monads.Tests
 		{
 			int? source = null;
 
-			var result = source.Recover(() => 10);
+			int result = source.Recover(() => 10);
 
 			Assert.AreEqual(10, result);
 		}
@@ -119,10 +134,10 @@ namespace System.Monads.Tests
 		{
 			int? source = 5;
 
-			var r = String.Empty;
-			var result = source.TryDo(s => r = s.ToString());
+			var r = 0;
+			var result = source.TryDo(s => r = s);
 
-			Assert.AreEqual("5", r);
+			Assert.AreEqual(5, r);
 			Assert.AreEqual(source, result.Item1);
 			Assert.AreEqual(null, result.Item2);
 		}
@@ -132,10 +147,10 @@ namespace System.Monads.Tests
 		{
 			int? source = null;
 
-			var r = String.Empty;
-			var result = source.TryDo(s => r = s.ToString());
+			var r = 10;
+			var result = source.TryDo(s => r = s);
 
-			Assert.AreEqual(String.Empty, r);
+			Assert.AreEqual(10, r);
 			Assert.AreEqual(null, result.Item1);
 			Assert.AreEqual(null, result.Item2);
 		}
@@ -145,10 +160,10 @@ namespace System.Monads.Tests
 		{
 			int? source = 1;
 
-			var r = String.Empty;
-			var result = source.TryDo(s => r = (100 / (s - 1)).ToString());
+			var r = 10;
+			var result = source.TryDo(s => r = (100 / (s - 1)));
 
-			Assert.AreEqual(String.Empty, r);
+			Assert.AreEqual(10, r);
 			Assert.AreEqual(source, result.Item1);
 			Assert.IsInstanceOfType(result.Item2, typeof(DivideByZeroException));
 		}
@@ -158,7 +173,8 @@ namespace System.Monads.Tests
 		{
 			int? source = 1;
 
-			var result = source.TryDo(s => (100 / (s - 1)).ToString(), ex => ex is DivideByZeroException);
+			var r = 10;
+			var result = source.TryDo(s => r = (100 / (s - 1)), ex => ex is DivideByZeroException);
 
 			Assert.AreEqual(source, result.Item1);
 			Assert.IsInstanceOfType(result.Item2, typeof(DivideByZeroException));
@@ -169,7 +185,8 @@ namespace System.Monads.Tests
 		{
 			int? source = 1;
 
-			var result = source.TryDo(s => (100 / (s - 1)).ToString(), typeof(DivideByZeroException), typeof(ArgumentException));
+			var r = 10;
+			var result = source.TryDo(s => r = (100 / (s - 1)), typeof(DivideByZeroException), typeof(ArgumentException));
 
 			Assert.AreEqual(source, result.Item1);
 			Assert.IsInstanceOfType(result.Item2, typeof(DivideByZeroException));
@@ -182,7 +199,8 @@ namespace System.Monads.Tests
 			{
 				int? source = 1;
 
-				var result = source.TryDo(s => (100 / (s - 1)).ToString(), typeof(OutOfMemoryException), typeof(ArgumentException));
+				var r = 10;
+				var result = source.TryDo(s => r = (100 / (s - 1)), typeof(OutOfMemoryException), typeof(ArgumentException));
 
 				Assert.Fail("Exception must be thrown.");
 			}
@@ -191,15 +209,37 @@ namespace System.Monads.Tests
 			}
 		}
 
+		[TestMethod]
+		public void TryWithOnObjectWithValueNoException()
+		{
+			int? source = 5;
+
+			Tuple<int,Exception> result = source.TryWith((int s) => s);
+
+			Assert.AreEqual(5, result.Item1);
+			Assert.AreEqual(null, result.Item2);
+		}
+
+		[TestMethod]
+		public void TryWithOnObjectWithNullNoException()
+		{
+			int? source = null;
+
+			Tuple<int, Exception> result = source.TryWith((int s) => s);
+
+			Assert.AreEqual(default(int), result.Item1);
+			Assert.AreEqual(null, result.Item2);
+		}
+
 
 		[TestMethod]
 		public void TryWithOnObjectWithException()
 		{
 			int? source = 1;
 
-			var result = source.TryWith(s => (100 / (s - 1)).ToString());
+			var result = source.TryWith((int s) => (100 / (s - 1)));
 
-			Assert.AreEqual(null, result.Item1);
+			Assert.AreEqual(default(int), result.Item1);
 			Assert.IsInstanceOfType(result.Item2, typeof(DivideByZeroException));
 		}
 
@@ -208,9 +248,9 @@ namespace System.Monads.Tests
 		{
 			int? source = 1;
 
-			var result = source.TryWith(s => (100 / (s - 1)).ToString(), ex => ex is DivideByZeroException);
+			var result = source.TryWith((int s) => (100 / (s - 1)), ex => ex is DivideByZeroException);
 
-			Assert.AreEqual(null, result.Item1);
+			Assert.AreEqual(default(int), result.Item1);
 			Assert.IsInstanceOfType(result.Item2, typeof(DivideByZeroException));
 		}
 
@@ -219,9 +259,9 @@ namespace System.Monads.Tests
 		{
 			int? source = 1;
 
-			var result = source.TryWith(s => (100 / (s - 1)).ToString(), typeof(DivideByZeroException));
+			var result = source.TryWith((int s) => (100 / (s - 1)), typeof(DivideByZeroException));
 
-			Assert.AreEqual(null, result.Item1);
+			Assert.AreEqual(default(int), result.Item1);
 			Assert.IsInstanceOfType(result.Item2, typeof(DivideByZeroException));
 		}
 
@@ -232,7 +272,7 @@ namespace System.Monads.Tests
 			{
 				int? source = 1;
 
-				var result = source.TryWith(s => (100 / (s - 1)).ToString(), typeof(OutOfMemoryException));
+				var result = source.TryWith((int s) => (100 / (s - 1)), typeof(OutOfMemoryException));
 
 				Assert.Fail("Exception must be thrown.");
 			}

@@ -11,12 +11,12 @@ namespace System.Monads
 		/// <param name="source">Source object for operating</param>
 		/// <param name="action">Action which should to do</param>
 		/// <returns><paramref name="source"/> object</returns>
-		public static Nullable<TSource> Do<TSource>(this Nullable<TSource> source, Action<Nullable<TSource>> action)
+		public static Nullable<TSource> Do<TSource>(this Nullable<TSource> source, Action<TSource> action)
 			where TSource : struct
 		{
 			if (source.HasValue == true)
 			{
-				action(source);
+				action(source.GetValueOrDefault());
 			}
 
 			return source;
@@ -30,12 +30,12 @@ namespace System.Monads
 		/// <param name="source">Source object for operating</param>
 		/// <param name="action">Conversion action which should to do</param>
 		/// <returns>Converted object which returns action</returns>
-		public static TResult With<TSource, TResult>(this Nullable<TSource> source, Func<Nullable<TSource>, TResult> action)
+		public static TResult With<TSource, TResult>(this Nullable<TSource> source, Func<TSource, TResult> action)
 			where TSource : struct
 		{
 			if (source.HasValue == true)
 			{
-				return action(source);
+				return action(source.GetValueOrDefault());
 			}
 			else
 			{
@@ -52,12 +52,12 @@ namespace System.Monads
 		/// <param name="action">Conversion action which should to do</param>
 		/// <param name="defaultValue">Value which will return if source is null</param>
 		/// <returns>Converted object which returns action if source is not null or <paramref name="defaultValue"/> otherwise</returns>
-		public static TResult Return<TSource, TResult>(this Nullable<TSource> source, Func<Nullable<TSource>, TResult> action, TResult defaultValue)
+		public static TResult Return<TSource, TResult>(this Nullable<TSource> source, Func<TSource, TResult> action, TResult defaultValue)
 			where TSource : struct
 		{
 			if (source.HasValue == true)
 			{
-				return action(source);
+				return action(source.GetValueOrDefault());
 			}
 			else
 			{
@@ -66,18 +66,18 @@ namespace System.Monads
 		}
 
 		/// <summary>
-		/// Retruns the <paramref name="source"/> if both <paramref name="condition"/> is true and <paramref name="source"/> is not null, or null otherwise
+		/// Retruns the <paramref name="source"/> if both <paramref name="condition"/> is true and <paramref name="source"/> is not null, or <c>default(TSource)</c> otherwise
 		/// </summary>
 		/// <typeparam name="TSource">Type of source object</typeparam>
 		/// <param name="source">Source object for operating</param>
 		/// <param name="condition">Condition which should be checked</param>
-		/// <returns><paramref name="source"/> if <paramref name="condition"/> is true, or null otherwise</returns>
-		public static Nullable<TSource> If<TSource>(this Nullable<TSource> source, Func<Nullable<TSource>, bool> condition)
+		/// <returns><paramref name="source"/> if <paramref name="condition"/> is true, or <c>default(TSource)</c> otherwise</returns>
+		public static TSource If<TSource>(this Nullable<TSource> source, Func<TSource, bool> condition)
 			where TSource : struct
 		{
-			if ((source.HasValue == true) && (condition(source) == true))
+			if ((source.HasValue == true) && (condition(source.GetValueOrDefault()) == true))
 			{
-				return source;
+				return source.GetValueOrDefault();
 			}
 			else
 			{
@@ -86,18 +86,18 @@ namespace System.Monads
 		}
 
 		/// <summary>
-		/// Retruns the <paramref name="source"/> if both <paramref name="condition"/> is false and <paramref name="source"/> is not null, or null otherwise
+		/// Retruns the <paramref name="source"/> if both <paramref name="condition"/> is false and <paramref name="source"/> is not null, or <c>default(TSource)</c> otherwise
 		/// </summary>
 		/// <typeparam name="TSource">Type of source object</typeparam>
 		/// <param name="source">Source object for operating</param>
 		/// <param name="condition">Condition which should be checked</param>
-		/// <returns><paramref name="source"/> if <paramref name="condition"/> is true, or null otherwise</returns>
-		public static Nullable<TSource> IfNot<TSource>(this Nullable<TSource> source, Func<Nullable<TSource>, bool> condition)
+		/// <returns><paramref name="source"/> if <paramref name="condition"/> is true, or <c>default(TSource)</c> otherwise</returns>
+		public static TSource IfNot<TSource>(this Nullable<TSource> source, Func<TSource, bool> condition)
 			where TSource : struct
 		{
-			if ((source.HasValue == true) && (condition(source) == false))
+			if ((source.HasValue == true) && (condition(source.GetValueOrDefault()) == false))
 			{
-				return source;
+				return source.GetValueOrDefault();
 			}
 			else
 			{
@@ -115,7 +115,7 @@ namespace System.Monads
 		public static TInput Recover<TInput>(this Nullable<TInput> source, Func<TInput> action)
 			where TInput : struct
 		{
-			return source.HasValue == true ? source.Value : action();
+			return source.HasValue == true ? source.GetValueOrDefault() : action();
 		}
 
 		/// <summary>
@@ -127,14 +127,14 @@ namespace System.Monads
 		/// <returns>
 		/// Tuple which contains <paramref name="source"/> and info about exception (if it throws)
 		/// </returns>
-		public static Tuple<Nullable<TSource>, Exception> TryDo<TSource>(this Nullable<TSource> source, Action<Nullable<TSource>> action)
+		public static Tuple<Nullable<TSource>, Exception> TryDo<TSource>(this Nullable<TSource> source, Action<TSource> action)
 			where TSource : struct
 		{
 			if (source.HasValue == true)
 			{
 				try
 				{
-					action(source);
+					action(source.GetValueOrDefault());
 				}
 				catch (Exception ex)
 				{
@@ -155,14 +155,14 @@ namespace System.Monads
 		/// <returns>
 		/// Tuple which contains <paramref name="source"/> and info about exception (if it throws)
 		/// </returns>
-		public static Tuple<Nullable<TSource>, Exception> TryDo<TSource>(this Nullable<TSource> source, Action<Nullable<TSource>> action, Func<Exception, bool> exceptionChecker)
+		public static Tuple<Nullable<TSource>, Exception> TryDo<TSource>(this Nullable<TSource> source, Action<TSource> action, Func<Exception, bool> exceptionChecker)
 			where TSource : struct
 		{
 			if (source.HasValue == true)
 			{
 				try
 				{
-					action(source);
+					action(source.GetValueOrDefault());
 				}
 				catch (Exception ex)
 				{
@@ -190,14 +190,14 @@ namespace System.Monads
 		/// <returns>
 		/// Tuple which contains <paramref name="source"/> and info about exception (if it throws)
 		/// </returns>
-		public static Tuple<Nullable<TSource>, Exception> TryDo<TSource>(this Nullable<TSource> source, Action<Nullable<TSource>> action, params Type[] expectedException)
+		public static Tuple<Nullable<TSource>, Exception> TryDo<TSource>(this Nullable<TSource> source, Action<TSource> action, params Type[] expectedException)
 			where TSource : struct
 		{
 			if (source.HasValue == true)
 			{
 				try
 				{
-					action(source);
+					action(source.GetValueOrDefault());
 				}
 				catch (Exception ex)
 				{
@@ -224,7 +224,7 @@ namespace System.Monads
 		/// <param name="source">Source object for operating</param>
 		/// <param name="action">Action which should to do</param>
 		/// <returns>Tuple which contains Converted object and info about exception (if it throws)</returns>
-		public static Tuple<TResult, Exception> TryWith<TSource, TResult>(this Nullable<TSource> source, Func<Nullable<TSource>, TResult> action)
+		public static Tuple<TResult, Exception> TryWith<TSource, TResult>(this Nullable<TSource> source, Func<TSource, TResult> action)
 			where TSource : struct
 		{
 			if (source.HasValue == true)
@@ -232,7 +232,7 @@ namespace System.Monads
 				TResult result = default(TResult);
 				try
 				{
-					result = action(source);
+					result = action(source.GetValueOrDefault());
 					return new Tuple<TResult, Exception>(result, null);
 				}
 				catch (Exception ex)
@@ -253,7 +253,7 @@ namespace System.Monads
 		/// <param name="action">Action which should to do</param>
 		/// <param name="exceptionChecker">Predicate to determine if exceptions should be handled</param>
 		/// <returns>Tuple which contains Converted object and info about exception (if it throws)</returns>
-		public static Tuple<TResult, Exception> TryWith<TSource, TResult>(this Nullable<TSource> source, Func<Nullable<TSource>, TResult> action, Func<Exception, bool> exceptionChecker)
+		public static Tuple<TResult, Exception> TryWith<TSource, TResult>(this Nullable<TSource> source, Func<TSource, TResult> action, Func<Exception, bool> exceptionChecker)
 			where TSource : struct
 		{
 			if (source.HasValue == true)
@@ -261,7 +261,7 @@ namespace System.Monads
 				TResult result = default(TResult);
 				try
 				{
-					result = action(source);
+					result = action(source.GetValueOrDefault());
 					return new Tuple<TResult, Exception>(result, null);
 				}
 				catch (Exception ex)
@@ -289,7 +289,7 @@ namespace System.Monads
 		/// <param name="action">Action which should to do</param>
 		/// <param name="expectedException">Array of exception types, which should be handled</param>
 		/// <returns>Tuple which contains Converted object and info about exception (if it throws)</returns>
-		public static Tuple<TResult, Exception> TryWith<TSource, TResult>(this Nullable<TSource> source, Func<Nullable<TSource>, TResult> action, params Type[] expectedException)
+		public static Tuple<TResult, Exception> TryWith<TSource, TResult>(this Nullable<TSource> source, Func<TSource, TResult> action, params Type[] expectedException)
 			where TSource : struct
 		{
 			if (source.HasValue == true)
@@ -297,7 +297,7 @@ namespace System.Monads
 				TResult result = default(TResult);
 				try
 				{
-					result = action(source);
+					result = action(source.GetValueOrDefault());
 					return new Tuple<TResult, Exception>(result, null);
 				}
 				catch (Exception ex)
