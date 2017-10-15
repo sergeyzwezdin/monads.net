@@ -1,3 +1,9 @@
+---
+
+# WARNING: Project depreacted in favor of native C# syntax. Please, don't use it for new projects.
+
+---
+
 Monads for .NET
 ===============
 
